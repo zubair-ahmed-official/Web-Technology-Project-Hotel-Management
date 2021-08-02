@@ -103,17 +103,80 @@ if(isset($_POST["add_event"]))
 	$err_db = $rs;
 	}
 }
+elseif(isset($_POST["edit_event"]))
+{
+	if(empty($_POST["name"]))
+	{
+		$hasError = true;
+		$err_name = " Name required";
+	}
+	else if(strlen($_POST["name"])<= 2)
+	{
+		$hasError = true;
+		$err_name = " Name must be greater than 2 characters";
+	}
+	else
+	{
+		$name = $_POST["name"];
+	}
+	
+	if(empty($_POST["desc"]))
+	{
+		$hasError = true;
+		$err_desc = " Description required";
+	}
+	else if(strlen($_POST["desc"])<= 10)
+	{
+		$hasError = true;
+		$err_desc = " Description must be greater than 10 characters";
+	}
+	else
+	{
+		$desc = $_POST["desc"];
+	}
+	
+	if(empty($_POST["time"]))
+	{
+		$hasError = true;
+		$err_time = " Time required";
+	}
+	else
+	{
+		$time = $_POST["time"];
+	}
+	
+	
+	if(empty($_POST["avl"]))
+	{
+		$hasError = true;
+		$err_avl = " Availability Required";
+	}
+	else
+	{
+		$avl = $_POST["avl"];
+	}
+
+	if(!$hasError)
+	{
+		
+	/* $filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
+	$target = "storage/product_images/".uniqid().".$filetype";
+	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target); */
+	
+	$rs = updateProduct($_POST["name"],$_POST["desc"],$_POST["time"],$_POST["avl"]);
+	if($rs === true)
+	{
+		header("Location: UpcomingEvents.php");
+	}
+	$err_db = $rs;
+	}
+}
 elseif(isset($_POST["Book_Event"]))
 {
 	if(empty($_POST["ename"]))
 	{
 		$hasError = true;
 		$err_name = " Name required";
-	}
-	else if(strlen($_POST["ename"])<=5)
-	{
-		$hasError = true;
-		$err_ename = " Event name doesn't exist";
 	}
 	else
 	{
@@ -163,12 +226,22 @@ elseif(isset($_POST["Book_Event"]))
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);*/
 	
-	$rs = inseertBooking($_POST["ename"],$_POST["time"],$_POST["cname"],$_POST["cid"],$_POST["members"]);
+	$rs = checkEventname($_POST["ename"]);
+	{
+	if($rs === true)
+	{
+	$rs = inseertBooking($_POST["ename"],$_POST["cname"],$_POST["cid"],$_POST["members"]);
 	if($rs === true)
 	{
 		//header("Location: Category.php");
 	}
-	$err_db = $rs;
+	$err_db = "<h2 style='color:green;' align =center> Booking Complete. Thank you.</h2>";
+	}
+	else
+	{
+		$err_db = "<h2 style='color:red;' align =center> Booking is not complete</h2>";
+	}
+	}
 	}
 }
 
@@ -177,9 +250,9 @@ function inseertProduct($name,$desc,$time,$avl,$img)
 	$query = "insert into events values (NULL,'$name','$desc','$time','$avl','$img')";
 	return execute($query);
 }
-function inseertBooking($ename,$time,$cname,$cid,$members)
+ function inseertBooking($ename,$cname,$cid,$members)
 {
-	$query = "insert into bookevent values (NULL,'$ename','$time','$cname',$cid, $members)";
+	$query = "insert into bookevent values (NULL,'$ename','$cname',$cid, $members)";
 	//$query = "insert into bookevent values (NULL,'$time','$cname',$cid, $members)";
 	return execute($query);
 }
@@ -198,4 +271,25 @@ function getProduct($id)
 	return $rs[0];
 }
 
+/* function updateProduct($name,$desc,$time,$avl,$id)
+{
+	$query = "update events set name ='$name',desc ='$desc',time = '$time' ,avl = '$avl' where id = $id";
+	return execute($query);
+} */
+
+function updateProduct($name,$desc,$time,$avl)
+{
+	$query = "UPDATE events SET name = '$name',desc ='$desc',time = '$time',avl = '$avl' WHERE id = $id";
+	return execute($query);
+}
+
+function checkEventname($ename) {
+$query = "select name from events where name='$ename'";
+$rs = get ($query) ;
+if(count($rs) > 0) 
+{
+return true;
+}
+return false;
+}
 ?>
