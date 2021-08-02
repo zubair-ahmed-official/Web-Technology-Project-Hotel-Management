@@ -21,7 +21,7 @@ $hasError = false;
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	/*if(!isset($_POST["hear"]))
+	if(!isset($_POST["hear"]))
 	{
 		$hasError = true;
 		$err_hear = "<b>This part is required to book</b>";
@@ -29,7 +29,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	else
 	{
 		$hear = $_POST["hear"];
-	}*/
+	}
+	if(empty($_POST["id"]))
+	{
+		$hasError = true;
+		$err_id = " ID required";
+	}
+	else
+	{
+		$id = $_POST["id"];
+	}
 	$id = $_POST["id"];
 	$hear = $_POST["hear"];
 	if(!$hasError)
@@ -42,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	echo "<h1>$e</h1><br>";
 	//$query= "INSERT INTO gym VALUES ('$id','$e')";
 	//$query_run = mysqli_connect($con,$query);
-    //echo "<input type='submit' name='Delete' value='Cancel'>";
+    
 	
 	$rs = inseertProduct($_POST["id"],$e);
 	if($rs === true)
@@ -51,18 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	$err_db = $rs;
 	}
-	
 	}
 }
 function inseertProduct($id,$e)
 {
-	$query = "insert into spa values ($id,'$e')";
-	return execute($query);
-}
-
-function deleteProduct($id,$e)
-{
-	$query = "DELETE FROM spa WHERE id = $id";
+	$query = "insert into gym values ($id,'$e')";
 	return execute($query);
 }
 ?>
@@ -109,9 +111,9 @@ function deleteProduct($id,$e)
 	{
 		refresh();
 		
-		if(get("id").value = "")
+		if(get("id").value == "")
 		{
-			hasError = true;
+		hasError = true;
 		get("err_id").innerHTML = "<h3 style='color: red;'>Customer ID required.</h3>";
 		}
 		
@@ -151,7 +153,7 @@ function deleteProduct($id,$e)
 	<h1><input type="checkbox" id="7pm-10pm" value= "7pm-10pm" <?php if (exist("7pm-10pm")) echo "checked"; ?> name="hear[]"> 7:00pm - 10:00pm  </td></tr>
 	
 	<tr><td></td><td id = "err_hear" >
-	<?php //echo $err_hear;?></td>
+	<?php echo $err_hear;?></td>
 	</table>
 	
 	<table>
@@ -164,7 +166,7 @@ function deleteProduct($id,$e)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b> </td>
-	<td><input type="text" value="<?php echo $id; ?>" name = "id"><span id="err_id"> <?php //echo $err_name; ?> </td>
+	<td><input id="id" type="text" value="<?php echo $id; ?>" name = "id"><span id="err_id"> <?php echo $err_id; ?> </td>
 	</tr>
 	<tr><td></td><td align = "right"> <h1><input align = "Right" type="submit" value="Book" > </td> </tr>
 	
