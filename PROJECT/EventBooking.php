@@ -14,7 +14,7 @@ $c = getProduct($id);
 <h3><?php echo $err_db ?></h3>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <input type="hidden" name= "id" value = "<?php echo $c["id"]; ?>">
-<tr><td align="right"><b>Event Name:</b></td><td>&nbsp;<input type="text" name= "ename" onfocusout="checkEventname(this)" value = "<?php echo $_POST["ename"]; ?>"><span id="err_ename"><?php echo $err_ename; ?></span> </td></tr>
+<tr><td align="right"><b>Event Name:</b></td><td>&nbsp;<input type="text" name= "ename" onfocusout="checkEventname(this)" value = "<?php echo $_COOKIE["name"]; ?>"><span id="err_ename"><?php echo $err_ename; ?></span> </td></tr>
 <tr><td align="right"><b>Customer Name:</b></td><td>&nbsp;<input type="text" name= "cname" value = "<?php echo $_POST["cname"]; ?>"></td></tr>
 <tr><td align="right"><b>Customer ID:</b></td><td>&nbsp;<input type="number" name= "cid" value = "<?php echo $_POST["cid"]; ?>"> </td></tr>
 <!--<tr><input type="file" name= "img" value = "<?php //echo $c["img"]; ?>"> </tr>-->

@@ -1,4 +1,5 @@
 <?php
+//session_start();
 error_reporting (E_ALL ^ E_NOTICE);
 require_once "Models/db_config.php";
 
@@ -39,6 +40,8 @@ if(isset($_POST["add_event"]))
 	else
 	{
 		$name = $_POST["name"];
+		setcookie("name",$name,time()+10 * 365 * 24 * 60 * 60);
+		//$_SESSION["name"] = $name;
 	}
 	
 	if(empty($_POST["desc"]))
@@ -181,6 +184,7 @@ elseif(isset($_POST["Book_Event"]))
 	else
 	{
 		$ename = $_POST["ename"];
+		
 	}
 	
 	if(empty($_POST["cname"]))
