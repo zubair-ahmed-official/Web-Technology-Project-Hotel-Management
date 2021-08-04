@@ -22,8 +22,8 @@ if(isset($_POST["add_pro"]))
 }
 elseif(isset($_POST["edit_room"]))
 {
-	echo "OK";
-	$rs = updateRooms($_POST["room_no"],$_POST["c_id"]);
+	//echo "OK";
+	$rs = updateRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
 	if($rs === true)
 	{
 		header("Location: Rooms.php");
@@ -44,7 +44,7 @@ function getRooms()
 	//$query = "SELECT p.*,c.name as 'c_name' from rooms p left join products1 c on p.c_id = c_id";
 	$query = "SELECT rooms.*, products1.name as 'c_name', products1.price as 'c_price'
 	FROM rooms
-	INNER JOIN products1 ON rooms.c_id=products1.id;";
+	INNER JOIN products1 ON rooms.c_id=products1.id";
 	$rs = get($query);
 	return $rs;
 }
@@ -56,9 +56,10 @@ function getRoom($id)
 	return $rs[0];
 }
 
-function updateRooms($room_no,$c_id)
+function updateRooms($room_no,$c_id,$id)
 {
 	$query = "update rooms set room_no ='$room_no',c_id = $c_id where id = $id";
+	echo $query;
 	return execute($query);
 }
 

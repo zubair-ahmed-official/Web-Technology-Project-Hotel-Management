@@ -8,7 +8,7 @@ $price = "";
 $err_price="";
 $qty = "";
 $err_qty="";
-$desc = "";
+$description = "";
 $err_desc = "";
 $img = "";
 $err_img = "";
@@ -54,14 +54,14 @@ if(isset($_POST["add_pro"]))
 		$qty = $_POST["qty"];
 	}
 	
-	if(empty($_POST["desc"]))
+	if(empty($_POST["description"]))
 	{
 		$hasError = true;
 		$err_desc = " Description required";
 	}
 	else
 	{
-		$desc = $_POST["desc"];
+		$description = $_POST["description"];
 	}
 	
 	/*if(empty($_POST["img"]))
@@ -81,7 +81,7 @@ if(isset($_POST["add_pro"]))
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);
 	
-	$rs = inseertProduct($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"],$target,$_POST["desc"]);
+	$rs = inseertProduct($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"],$target,$_POST["description"]);
 	if($rs === true)
 	{
 		header("Location: Category.php");
@@ -127,23 +127,23 @@ elseif(isset($_POST["Edit_cat"]))
 		$qty = $_POST["qty"];
 	}
 	
-	if(empty($_POST["desc"]))
+	if(empty($_POST["description"]))
 	{
 		$hasError = true;
 		$err_desc = " Description required";
 	}
 	else
 	{
-		$desc = $_POST["desc"];
+		$description = $_POST["description"];
 	}
 	
 	if(!$hasError)
 	{
-	$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
+	/* $filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
-	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);
+	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target); */
 	
-	$rs = updateProduct($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"],$target,$_POST["desc"]);
+	$rs = updateProduct($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"]/* ,$target */,$_POST["description"],$_POST["id"]);
 	if($rs === true)
 	{
 		header("Location: Category.php");
@@ -152,9 +152,9 @@ elseif(isset($_POST["Edit_cat"]))
 	}
 }
 
-function inseertProduct($name/*,$c_id*/,$price,$qty,$img,$desc)
+function inseertProduct($name/*,$c_id*/,$price,$qty,$img,$description)
 {
-	$query = "insert into products1 values (NULL,'$name',$price,$qty,'$img','$desc')";
+	$query = "insert into products1 values (NULL,'$name',$price,$qty,'$img','$description')";
 	return execute($query);
 }
 
@@ -172,9 +172,10 @@ function getProduct($id)
 	return $rs[0];
 }
 
-function updateProduct($name,$price,$qty,$img,$desc)
+function updateProduct($name,$price,$qty/* ,$img */,$description,$id)
 {
-	$query = "update products1 set name ='$name',price = $price,qty = $qty,img = '$img',desc ='$desc' where id = $id";
+	$query = "update products1 set name ='$name',price = $price,qty = $qty,description ='$description' where id = $id";
+	echo $query;
 	return execute($query);
 }
 ?>

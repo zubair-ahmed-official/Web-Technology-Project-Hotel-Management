@@ -15,7 +15,7 @@ require_once 'Controller/EventsController.php';
 <tr><td align="right"><b>Event Name:</b></td>
 <td>&nbsp;<input type="text" name = "name"><?php echo $err_name; ?> </td></tr>
 <td align="right"><b>Description:</b></td>
-<td>&nbsp;<input type="textarea" name = "desc"> <?php echo $err_desc; ?></td></tr>
+<td>&nbsp;<input type="textarea" name = "description"> <?php echo $err_desc; ?></td></tr>
 <tr><td align="right"><b>Time:</b></td>
 <td>&nbsp;<input type="textarea" name = "time"><?php echo $err_time; ?> </td></tr>
 <!--<p>Category:</p>

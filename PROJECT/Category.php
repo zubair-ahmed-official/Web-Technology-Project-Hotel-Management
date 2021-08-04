@@ -100,7 +100,7 @@
 			echo "<td>&nbsp;&nbsp;<b>Number of Beds:</b>&nbsp;&nbsp; </td><td>".'&nbsp;&nbsp;&nbsp;&nbsp;'.$c["qty"]. ' Beds'. '&nbsp;&nbsp;&nbsp;&nbsp;'."</td>";
 			echo "</tr>";
 			echo "<tr>";
-			echo "<td>&nbsp;&nbsp;<b>Description:</b> </td><td>".'&nbsp;&nbsp;&nbsp;&nbsp;'.$c["desc"]. '&nbsp;&nbsp;&nbsp;&nbsp;'."</td>";
+			echo "<td>&nbsp;&nbsp;<b>Description:</b> </td><td>".'&nbsp;&nbsp;&nbsp;&nbsp;'.$c["description"]. '&nbsp;&nbsp;&nbsp;&nbsp;'."</td>";
 			echo "</tr>";
 			
 			echo "<tr>";

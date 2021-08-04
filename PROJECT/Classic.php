@@ -133,7 +133,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 function inseertProduct($RoomNo,$phone,$Cid,$e,$j)
 {
+	
 	$query = "insert into classic values ($RoomNo,$phone,$Cid,'$e',$j)";
+	echo $query;
 	return execute($query);
 }
 ?>
@@ -172,7 +174,7 @@ function inseertProduct($RoomNo,$phone,$Cid,$e,$j)
 	<h3 id = "err_hear" align="center">
 	<?php echo $err_hear;?>
 	</h3>
-	<h3 align="center"> <!--id = "err_plates"--> 
+	<h3 align="center" id = "err_plates"> 
 	<?php echo $err_plates;?>
 	</h3>
 	

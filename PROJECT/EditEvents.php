@@ -15,15 +15,16 @@ $c = getProduct($id);
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Event Name:</b></td>
+<input type="hidden" name= "id" value = "<?php echo $c["id"]; ?>">
 <td>&nbsp;<input type="text" name = "name" value = "<?php echo $c["name"]; ?>"><?php echo $err_name; ?> </td></tr>
 <td align="right"><b>Description:</b></td>
-<td>&nbsp;<input type="textarea" name = "desc" value = "<?php echo $c["desc"]; ?>"> <?php echo $err_desc; ?></td></tr>
+<td>&nbsp;<input type="textarea" name = "description" value = "<?php echo $c["description"]; ?>"> <?php echo $err_desc; ?></td></tr>
 <tr><td align="right"><b>Time:</b></td>
 <td>&nbsp;<input type="textarea" name = "time" value = "<?php echo $c["time"]; ?>"><?php echo $err_time; ?> </td></tr>
 <tr><td align="right"><b>Available For:</b></td>
 <td>&nbsp;<input type="textarea" name = "avl" value = "<?php echo $c["avl"]; ?>"><?php echo $err_avl; ?> </td></tr>
 
-<td>&nbsp;<input type="submit" name ="edit_event" value="Update" ></td></tr>
+<tr><td></td><td>&nbsp;<input type="submit" name ="edit_event" value="Update" ></td></tr>
 </table>
 </body>
 </html>

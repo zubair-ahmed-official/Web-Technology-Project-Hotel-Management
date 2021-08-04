@@ -5,8 +5,7 @@ require_once 'Controller/CatController.php';
 $id = $_GET["id"];
 $c = getRoom($id);
 $cat = getProducts();
-//require_once 'Controller/CategoryController.php';
-//$cat = getallcategory();
+
 ?>
 
 <html>
@@ -18,10 +17,11 @@ $cat = getProducts();
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Room No:</b></td>
+<input type="hidden" name= "id" value = "<?php echo $c["id"]; ?>">
 <td>&nbsp;<input type="text" name = "room_no" value = "<?php echo $c["room_no"]; ?>"><?php echo $err_room_no; ?> </td></tr>
 <td align="right"><b>Category:</b></td>
 <td>&nbsp;<select name="c_id" >
-<option value='".$c["id"]."'>Choose</option>
+<option value="<?php echo $c["c_id"]; ?>">Choose</option>
 <?php
 foreach($cat as $c)
 {

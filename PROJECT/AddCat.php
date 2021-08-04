@@ -29,7 +29,7 @@ require_once 'Controller/CatController.php';
 <tr><td align="right"><b>Number of Beds:</b></td>
 <td>&nbsp;<input type="text" name = "qty"><?php echo $err_qty; ?> </td></tr>
 <tr><td align="right"><b>Description:</b></td>
-<td>&nbsp;<input type="text" name = "desc"><?php echo $err_desc; ?> </td></tr>
+<td>&nbsp;<input type="text" name = "description"><?php echo $err_desc; ?> </td></tr>
 <tr><td align="right"><b>Image:</b></td>
 <td>&nbsp;<input type="file" name="p_image"><?php //echo $err_img; ?> </td></tr>
 <tr><td></td>

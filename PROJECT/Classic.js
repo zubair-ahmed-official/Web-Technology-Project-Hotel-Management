@@ -14,17 +14,27 @@ function get(id)
 		}
 		return true;
 		
-		/*var gym = document.getElementsByName("hear[]");
-		for(var i=0;i<gym.length;i++)
+		/*var classic = document.getElementsByName("hear[]");
+		for(var i=0;i<classic.length;i++)
 		{
-			if(gym[i].checked)
+			if(classic[i].checked)
 			{
 				return true;
 			}
 		}
 		return false;*/
 	}
-	
+	function validatePlates(){
+		var plates = document.getElementsByName("plates[]");
+		var flag =false;
+		for(var i=0;i<plates.length;i++){
+			if(plates[i].selectedIndex > 0){
+			
+				return true;
+			}
+		}
+		return flag;
+	}
 	function validate()
 	{
 		refresh();
@@ -47,11 +57,12 @@ function get(id)
 		get("err_Cid").innerHTML = "<h3 style='color: red;'>  Customer ID required.</h3>";
 		}
 		
-		/*if(get("plates").selectedIndex == 0)
+	    /* if(!validatePlates())
 		{
 		hasError = true;
+		//var errs = document.getElementsByName("")
 		get("err_plates").innerHTML = "<h3 style='color: red;'>  Number of Plates Required.</h3>";
-		}*/
+		}  */
 		
 		//document.write("Hello");
 		if(validateSchedule() != true)
@@ -60,12 +71,6 @@ function get(id)
 		get("err_hear").innerHTML = "<h3 style='color: red;'>  Select Food and Number of Plates Precisely to order.</h3>";
 		}
 		
-		
-		/*if(!get("7am-10am").checked && !get("11am-2pm").checked  && !get("4pm-7pm").checked && !get("7pm-10pm").checked)
-		{
-		hasError = true;
-		get("err_hear").innerHTML = "Select schedule for reserving.";
-		}*/
 		return !hasError;
 	}
 	function refresh()
@@ -75,5 +80,5 @@ function get(id)
 		get("err_RoomNo").innerHTML = "";
 		get("err_phone").innerHTML = "";
 		get("err_Cid").innerHTML = "";
-		//get("err_plates").innerHTML = "";
+		get("err_plates").innerHTML = "";
 	}

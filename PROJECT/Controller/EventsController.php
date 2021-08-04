@@ -17,7 +17,7 @@ $time = "";
 $err_time="";
 $avl = "";
 $err_avl="";
-$desc = "";
+$description = "";
 $err_desc = "";
 $img = "";
 $err_img = "";
@@ -40,23 +40,22 @@ if(isset($_POST["add_event"]))
 	else
 	{
 		$name = $_POST["name"];
-		setcookie("name",$name,time()+10 * 365 * 24 * 60 * 60);
 		//$_SESSION["name"] = $name;
 	}
 	
-	if(empty($_POST["desc"]))
+	if(empty($_POST["description"]))
 	{
 		$hasError = true;
 		$err_desc = " Description required";
 	}
-	else if(strlen($_POST["desc"])<= 10)
+	else if(strlen($_POST["description"])<= 10)
 	{
 		$hasError = true;
 		$err_desc = " Description must be greater than 10 characters";
 	}
 	else
 	{
-		$desc = $_POST["desc"];
+		$description = $_POST["description"];
 	}
 	
 	if(empty($_POST["time"]))
@@ -123,19 +122,19 @@ elseif(isset($_POST["edit_event"]))
 		$name = $_POST["name"];
 	}
 	
-	if(empty($_POST["desc"]))
+	if(empty($_POST["description"]))
 	{
 		$hasError = true;
 		$err_desc = " Description required";
 	}
-	else if(strlen($_POST["desc"])<= 10)
+	else if(strlen($_POST["description"])<= 10)
 	{
 		$hasError = true;
 		$err_desc = " Description must be greater than 10 characters";
 	}
 	else
 	{
-		$desc = $_POST["desc"];
+		$description = $_POST["description"];
 	}
 	
 	if(empty($_POST["time"]))
@@ -166,7 +165,7 @@ elseif(isset($_POST["edit_event"]))
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target); */
 	
-	$rs = updateProduct($_POST["name"],$_POST["desc"],$_POST["time"],$_POST["avl"]);
+	$rs = updateProduct($_POST["name"],$_POST["description"],$_POST["time"],$_POST["avl"],$_POST["id"]);
 	if($rs === true)
 	{
 		header("Location: UpcomingEvents.php");
@@ -179,11 +178,12 @@ elseif(isset($_POST["Book_Event"]))
 	if(empty($_POST["ename"]))
 	{
 		$hasError = true;
-		$err_name = " Name required";
+		$err_ename = " Name required";
 	}
 	else
 	{
 		$ename = $_POST["ename"];
+		setcookie("ename",$ename,time()+10 * 365 * 24 * 60 * 60);
 		
 	}
 	
@@ -249,9 +249,9 @@ elseif(isset($_POST["Book_Event"]))
 	}
 }
 
-function inseertProduct($name,$desc,$time,$avl,$img)
+function inseertProduct($name,$description,$time,$avl,$img)
 {
-	$query = "insert into events values (NULL,'$name','$desc','$time','$avl','$img')";
+	$query = "insert into events values (NULL,'$name','$description','$time','$avl','$img')";
 	return execute($query);
 }
  function inseertBooking($ename,$cname,$cid,$members)
@@ -281,9 +281,9 @@ function getProduct($id)
 	return execute($query);
 } */
 
-function updateProduct($name,$desc,$time,$avl)
+function updateProduct($name,$description,$time,$avl,$id)
 {
-	$query = "UPDATE events SET name = '$name',desc ='$desc',time = '$time',avl = '$avl' WHERE id = $id";
+	$query = "UPDATE events SET name = '$name',description ='$description',time = '$time',avl = '$avl' WHERE id = $id";
 	return execute($query);
 }
 
