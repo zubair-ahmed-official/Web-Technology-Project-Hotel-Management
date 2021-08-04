@@ -40,7 +40,6 @@ if(isset($_POST["add_event"]))
 	else
 	{
 		$name = $_POST["name"];
-		//$_SESSION["name"] = $name;
 	}
 	
 	if(empty($_POST["description"]))
@@ -183,7 +182,6 @@ elseif(isset($_POST["Book_Event"]))
 	else
 	{
 		$ename = $_POST["ename"];
-		setcookie("ename",$ename,time()+10 * 365 * 24 * 60 * 60);
 		
 	}
 	
@@ -229,9 +227,8 @@ elseif(isset($_POST["Book_Event"]))
 	/*$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);*/
-	
 	$rs = checkEventname($_POST["ename"]);
-	{
+	
 	if($rs === true)
 	{
 	$rs = inseertBooking($_POST["ename"],$_POST["cname"],$_POST["cid"],$_POST["members"]);
@@ -245,7 +242,7 @@ elseif(isset($_POST["Book_Event"]))
 	{
 		$err_db = "<h2 style='color:red;' align =center> Booking is not complete</h2>";
 	}
-	}
+	
 	}
 }
 

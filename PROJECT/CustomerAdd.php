@@ -1,6 +1,6 @@
 <?php
 error_reporting (E_ALL ^ E_NOTICE);
-
+require_once "Models/db_config.php";
 
 $txt = "";
 $txt2 = "";
@@ -62,7 +62,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 <tr><td><b>Customer Name: </b></td><td><b>Customer ID:</b></td>  <td><b>Phone:</b></td> <td><b>Room no:</b> </td> <td><b> Booking Time: </b></td> <td><b> Booked Days: </b></td><td><b> Customer account link:</b></td> </tr>
 <tr><td> <?php 
+function inseertProduct($tx)
+{
+	$query = "insert into customer_checkin values ('$tx')";
+	//echo "$query";
+	return execute($query);
+}
 echo "<form method='post'>";
+
 //error_reporting (E_ALL ^ E_NOTICE);
 //$err = "";
 //$txt = "";
@@ -76,6 +83,13 @@ for($i=0;$i<25;$i++)
 	if($len>8)
 	{
 		$tx = $_POST["txt$i"];
+		$rs = inseertProduct($_POST["txt$i"]);
+		if($rs === true)
+		{
+		   //header("Location: AllProducts.php");
+		}
+	$err_db = $rs;
+		
 	}
 	else if($len>0 && $len<8 )
 	{
