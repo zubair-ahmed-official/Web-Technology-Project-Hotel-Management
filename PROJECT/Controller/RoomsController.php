@@ -5,7 +5,25 @@ require_once "Models/db_config.php";
 $err_db = "";
 if(isset($_POST["add_pro"]))
 {
+	if(empty($_POST["room_no"]))
+	{
+		$hasError = true;
+		$err_room_no = " Room No. required";
+	}
+	else
+	{
+		$room_no = $_POST["room_no"];
+	}
 	
+	if(!isset($_POST["c_id"]))
+	{
+		$hasError = true;
+		$err_c_id= " Category required";
+	}
+	else
+	{
+		$c_id = $_POST["c_id"];
+	}
 	/* $filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target); */

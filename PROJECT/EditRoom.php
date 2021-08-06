@@ -21,14 +21,14 @@ $cat = getProducts();
 <td>&nbsp;<input type="text" name = "room_no" value = "<?php echo $c["room_no"]; ?>"><?php echo $err_room_no; ?> </td></tr>
 <td align="right"><b>Category:</b></td>
 <td>&nbsp;<select name="c_id" >
-<option value="<?php echo $c["c_id"]; ?>">Choose</option>
+<option value="<?php echo $c["c_id"]; ?>">--Choose--</option>
 <?php
 foreach($cat as $c)
 {
 	echo "<option value='".$c["id"]."'>".$c["name"]."</option>";
 }
 ?>
-</select></td><tr>
+</select><?php echo $err_c_id; ?></td><tr>
 
 <td>&nbsp;<input type="submit" name ="edit_room" value="Update" ></td></tr>
 </table>

@@ -3,32 +3,33 @@ require_once 'Controller/CheckinController.php';
 ?>
 <html>
 <body>
-<form  method="post">
+<form  onsubmit="return validate()" method="post"> <!--method="post" -->
 <table>
 <h1 style='color:rgb(128, 0, 64)'>Customers Checkin</h1>
 
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer Name: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b></td>  <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Phone:</b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Room no:</b> </td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkin Time: </b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkout Time: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Customer account link:</b></td> </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cname" value="<?php echo $cname?>" >&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cid" value="<?php echo $cid?>" >&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="phone" value="<?php echo $phone?>" >&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="btime" value="<?php echo $btime?>">&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bdays" value="<?php echo $bdays?>">&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="clink" value="<?php echo $clink?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cname" name="cname" value="<?php echo $cname?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cid" name="cid" value="<?php echo $cid?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="phone" name="phone" value="<?php echo $phone?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="room_no" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="btime" name="btime" value="<?php echo $btime?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="bdays" name="bdays" value="<?php echo $bdays?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="clink" name="clink" value="<?php echo $clink?>">&nbsp;&nbsp;</td>
 <td>&nbsp;<input type="submit" name="add" id="add" value="Add Checkin">&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_cname; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_cid; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_phone; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_cname"  ></span><?php echo $err_cname; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_cid"  ></span><?php echo $err_cid; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_phone"  ></span><?php echo $err_phone; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red" id="err_room_no"><?php echo $err_room_no; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_btime; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_bdays; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_clink; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_btime"  ></span><?php echo $err_btime; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_bdays"  ></span><?php echo $err_bdays; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_clink"  ></span><?php echo $err_clink; ?>&nbsp;&nbsp;</td>
 </tr>
 </table>
 <script src ="checkAvailability.js"></script>
+<script src ="checkin.js"></script>
 
 </body>
 </html>

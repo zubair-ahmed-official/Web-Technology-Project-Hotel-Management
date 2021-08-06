@@ -12,7 +12,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["cname"]))
 	{
 		$hasError = true;
-		$err_cname = "<span style='color:red'>Name required</span>";
+		$err_cname = "<span>Name required</span>";
 	}
 	else
 	{
@@ -22,7 +22,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["cid"]))
 	{
 		$hasError = true;
-		$err_cid = "<span style='color:red'> Customer ID required</span>";
+		$err_cid = "<span> Customer ID required</span>";
 	}
 	else
 	{
@@ -32,7 +32,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["phone"]))
 	{
 		$hasError = true;
-		$err_phone = "<span style='color:red'> Phone required</span>";
+		$err_phone = "<span> Phone required</span>";
 	}
 	else
 	{
@@ -42,7 +42,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["room_no"]))
 	{
 		$hasError = true;
-		$err_room_no = "<span style='color:red'> Room No required</span>";
+		$err_room_no = "<span> Room No required</span>";
 	}
 	else
 	{
@@ -52,7 +52,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["btime"]))
 	{
 		$hasError = true;
-		$err_btime = "<span style='color:red'> Checkin Time required</span>";
+		$err_btime = "<span> Checkin Time required</span>";
 	}
 	else
 	{
@@ -62,7 +62,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["bdays"]))
 	{
 		$hasError = true;
-		$err_bdays = " <span style='color:red'>Checkout Time required</span>";
+		$err_bdays = " <span>Checkout Time required</span>";
 	}
 	else
 	{
@@ -72,7 +72,7 @@ if(isset($_POST["add"]))
 	if(empty($_POST["clink"]))
 	{
 		$hasError = true;
-		$err_clink = "<span style='color:red'> Customer Link required</span>";
+		$err_clink = "<span> Customer Link required</span>";
 	}
 	else
 	{

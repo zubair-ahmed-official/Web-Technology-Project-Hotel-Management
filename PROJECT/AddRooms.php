@@ -21,10 +21,10 @@ $cat = getProducts();
 foreach($cat as $c)
 {
 	echo "<option value='".$c["id"]."'>".$c["name"]."</option>";
-	setCookie("c_id",
 }
 ?>
-</select></td><tr>
+</select><?php echo $err_c_id; ?></td><tr>
+
 <span><?php //echo $err_db; ?></span>
 
 <td></td><td>&nbsp;<input type="submit" name ="add_pro" value="Add Room" > </td>
