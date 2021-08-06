@@ -31,8 +31,10 @@
 			echo "</tr>";
 			
 			echo "<tr>";
-			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href= "EditEvents.php?id='.$id.'"><input type="button" value="Update Events">  </a></td>';
+			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href= "EditEvents.php?id='.$id.'"><input type="button" value="Update Events"> </a>&nbsp;&nbsp;&nbsp;<br>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="DeleteEvent.php?id='.$id.'"><input type="button" value="Delete Event"> </a></td>';
 			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="BookEvent.php"><input type="button" value="Book Now"> </a></td>';
+			//echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="DeleteEvent.php"><input type="button" value="Delete Event"> </a></td>';
 			echo "</tr>";
 			echo "</table>";
 			echo "&nbsp;&nbsp;&nbsp;&nbsp;";

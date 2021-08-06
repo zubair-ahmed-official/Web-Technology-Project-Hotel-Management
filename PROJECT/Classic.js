@@ -57,12 +57,12 @@ function get(id)
 		get("err_Cid").innerHTML = "<h3 style='color: red;'>  Customer ID required.</h3>";
 		}
 		
-	    /* if(!validatePlates())
+	     if(!validatePlates())
 		{
 		hasError = true;
 		//var errs = document.getElementsByName("")
 		get("err_plates").innerHTML = "<h3 style='color: red;'>  Number of Plates Required.</h3>";
-		}  */
+		}  
 		
 		//document.write("Hello");
 		if(validateSchedule() != true)

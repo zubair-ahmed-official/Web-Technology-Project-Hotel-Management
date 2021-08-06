@@ -104,8 +104,9 @@
 			echo "</tr>";
 			
 			echo "<tr>";
-			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href= "EditCatagory.php?id='.$id.'"><input type="button" value="Update">  </a></td>
-			<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="Room_Booking.php"><input type="button" value="Book Now"> </a></td>';
+			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href= "EditCatagory.php?id='.$id.'"><input type="button" value="Update">  </a><br>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href= "DeleteCategory.php?id='.$id.'"><input type="button" value="Delete">  </a></td>';
+			echo '<td>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="Room_Booking.php"><input type="button" value="Book Now"> </a></td>';
 			echo "</tr>";
 			echo "</table>";
 			echo "&nbsp;&nbsp;&nbsp;&nbsp;";

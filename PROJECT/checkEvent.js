@@ -19,7 +19,7 @@ get("err_ename").innerHTML = " Event Found";
 }
 else
 {
-   get("err_ename").innerHTML = "Event doesn't Exist";
+   get("err_ename").innerHTML = " Event doesn't Exist";
 }
 }
 };

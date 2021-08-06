@@ -18,7 +18,7 @@ $err_time="";
 $avl = "";
 $err_avl="";
 $description = "";
-$err_desc = "";
+$err_description = "";
 $img = "";
 $err_img = "";
 $err_db = "";
@@ -45,13 +45,9 @@ if(isset($_POST["add_event"]))
 	if(empty($_POST["description"]))
 	{
 		$hasError = true;
-		$err_desc = " Description required";
+		$err_description = " Description required";
 	}
-	else if(strlen($_POST["description"])<= 10)
-	{
-		$hasError = true;
-		$err_desc = " Description must be greater than 10 characters";
-	}
+	
 	else
 	{
 		$description = $_POST["description"];
@@ -96,7 +92,7 @@ if(isset($_POST["add_event"]))
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);
 	
-	$rs = inseertProduct($_POST["name"],$_POST["desc"],$_POST["time"],$_POST["avl"],$target);
+	$rs = inseertProduct($_POST["name"],$_POST["description"],$_POST["time"],$_POST["avl"],$target);
 	if($rs === true)
 	{
 		header("Location: UpcomingEvents.php");
@@ -246,6 +242,74 @@ elseif(isset($_POST["Book_Event"]))
 	}
 }
 
+elseif(isset($_POST["Delete_Event"]))
+{
+	if(empty($_POST["name"]))
+	{
+		$hasError = true;
+		$err_name = " Name required";
+	}
+	else if(strlen($_POST["name"])<= 2)
+	{
+		$hasError = true;
+		$err_name = " Name must be greater than 2 characters";
+	}
+	else
+	{
+		$name = $_POST["name"];
+	}
+	
+	if(empty($_POST["description"]))
+	{
+		$hasError = true;
+		$err_desc = " Description required";
+	}
+	else if(strlen($_POST["description"])<= 10)
+	{
+		$hasError = true;
+		$err_desc = " Description must be greater than 10 characters";
+	}
+	else
+	{
+		$description = $_POST["description"];
+	}
+	
+	if(empty($_POST["time"]))
+	{
+		$hasError = true;
+		$err_time = " Time required";
+	}
+	else
+	{
+		$time = $_POST["time"];
+	}
+	
+	
+	if(empty($_POST["avl"]))
+	{
+		$hasError = true;
+		$err_avl = " Availability Required";
+	}
+	else
+	{
+		$avl = $_POST["avl"];
+	}
+	
+	if(!$hasError)
+	{
+	$rs = deleteEvent($_POST["id"]);
+	
+	if($rs === true)
+	{	
+	
+		header("Location: UpcomingEvents.php");
+	}
+	else{
+	$err_db = $rs;
+	}
+	}
+}
+
 function inseertProduct($name,$description,$time,$avl,$img)
 {
 	$query = "insert into events values (NULL,'$name','$description','$time','$avl','$img')";
@@ -271,7 +335,13 @@ function getProduct($id)
 	$rs = get($query);
 	return $rs[0];
 }
-
+function deleteEvent($id)
+{
+	
+	$query = "DELETE FROM events WHERE id=$id";
+	echo "$query";
+	return execute($query);
+}
 /* function updateProduct($name,$desc,$time,$avl,$id)
 {
 	$query = "update events set name ='$name',desc ='$desc',time = '$time' ,avl = '$avl' where id = $id";

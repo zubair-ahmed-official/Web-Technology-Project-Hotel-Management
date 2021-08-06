@@ -152,9 +152,35 @@ elseif(isset($_POST["Edit_cat"]))
 	}
 }
 
+elseif(isset($_POST["Delete_cat"]))
+{
+	if(!$hasError)
+	{
+	$rs = deleteCat($_POST["id"]);
+	
+	if($rs === true)
+	{	
+	
+		header("Location: Category.php");
+	}
+	else{
+	$err_db = $rs;
+	}
+	}
+	
+}
+
 function inseertProduct($name/*,$c_id*/,$price,$qty,$img,$description)
 {
 	$query = "insert into products1 values (NULL,'$name',$price,$qty,'$img','$description')";
+	return execute($query);
+}
+
+function deleteCat($id)
+{
+	
+	$query = "DELETE FROM products1 WHERE id=$id";
+	echo "$query";
 	return execute($query);
 }
 

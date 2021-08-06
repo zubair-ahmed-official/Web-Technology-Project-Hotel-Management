@@ -11,7 +11,7 @@ $c = getProduct($id);
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" method="post">
-<h2 style="color:red" align ="center">Update Events:</h2>
+<h2 style="color:red" align ="center">Delete Events:</h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Event Name:</b></td>
@@ -24,7 +24,7 @@ $c = getProduct($id);
 <tr><td align="right"><b>Available For:</b></td>
 <td>&nbsp;<input type="textarea" name = "avl" value = "<?php echo $c["avl"]; ?>"><?php echo $err_avl; ?> </td></tr>
 
-<tr><td></td><td>&nbsp;<input type="submit" name ="edit_event" value="Update" ></td></tr>
+<tr><td></td><td>&nbsp;<input type="submit" name ="Delete_Event" value="Delete" ></td></tr>
 </table>
 </body>
 </html>

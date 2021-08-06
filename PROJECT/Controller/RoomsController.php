@@ -28,8 +28,8 @@ if(isset($_POST["add_pro"]))
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target); */
 	
-	$room_no = $_POST["room_no"];
-	$c_id = $_POST["c_id"];
+	//$room_no = $_POST["room_no"];
+	//$c_id = $_POST["c_id"];
 	
 	$rs = inseertRooms($_POST["room_no"],$_POST["c_id"]);
 	if($rs === true)
