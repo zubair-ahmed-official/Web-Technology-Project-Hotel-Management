@@ -5,23 +5,6 @@ require_once "Models/db_config.php";
 
 $room_no="";
 $err_room_no="";
-$ename="";
-$err_ename="";
-$cname = "";
-$err_cname="";
-$cid = "";
-$err_cid="";
-$members = "";
-$err_members="";
-$time = "";
-$err_time="";
-$avl = "";
-$err_avl="";
-$desc = "";
-$err_desc = "";
-$img = "";
-$err_img = "";
-$err_db = "";
 
 $hasError = false;
 

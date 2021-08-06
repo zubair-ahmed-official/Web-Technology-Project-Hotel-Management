@@ -1,5 +1,5 @@
 function get (id) {
-return document.getElementById (id) ;;
+return document.getElementById (id) ;
 }
 function checkRoomAvailability(e) 
 {
@@ -14,11 +14,11 @@ if(this.readyState == 4 && this.status == 200)
 {
 if (this.responseText.trim() == "Room Booked")
 {
-get("err_room_no").innerHTML = " Room is not available";
+get("err_room_no").innerHTML = "Room is not available";
 }
 else
 {
-   get("err_room_no").innerHTML = "Room is available";
+   get("err_room_no").innerHTML = "";
 }
 }
 };

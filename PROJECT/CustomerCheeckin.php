@@ -1,44 +1,39 @@
-<?php
-error_reporting (E_ALL ^ E_NOTICE);
-require_once "Models/db_config.php";
-$err_db = "";
-if(isset($_POST["save"]))
-{
-	$rs = inseertChecking($_POST["cname"],$_POST["c_id"],$_POST["phone"],$_POST["room_no"],$_POST["btime"],$_POST["bdays"],$_POST["clink"]);
-	if($rs === true)
-	{
-		//header("Location: AllProducts.php");
-	}
-	$err_db = $rs;
-}
-
-function inseertChecking($cname,$c_id,$phone,$room_no,$btime,$bdays,$clink)
-{
-	
-	$query = "insert into customer_checkin values ('$cname',$c_id,$phone,$room_no,'$btime','$bdays','$clink')";
-	//echo "$query";
-	return execute($query);
-} 
+<?php 
+require_once 'Controller/CheckinController.php';
 ?>
 <html>
 <body>
-<form action="" id="insert_form" method="post">
-<table id="table_field">
-<h1>Customers Checkin</h1>
+<form  method="post">
+<table>
+<h1 style='color:rgb(128, 0, 64)'>Customers Checkin</h1>
 
-<tr><td><b>Customer Name: </b></td><td><b>Customer ID:</b></td>  <td><b>Phone:</b></td> <td><b>Room no:</b> </td> <td><b> Booking Time: </b></td> <td><b> Booked Days: </b></td><td><b> Customer account link:</b></td> </tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer Name: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b></td>  <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Phone:</b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Room no:</b> </td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkin Time: </b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkout Time: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Customer account link:</b></td> </tr>
 <tr>
-<td><input type="text" name="cname" required=""></td>
-<td><input type="text" name="c_id" required=""></td>
-<td><input type="text" name="phone" required=""></td>
-<td><input type="text" name="room_no" required=""></td>
-<td><input type="text" name="btime" required=""></td>
-<td><input type="text" name="bdays" required=""></td>
-<td><input type="text" name="clink" required=""></td>
-<td><input type="button" name="add" id="add" value="add"></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cname" value="<?php echo $cname?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cid" value="<?php echo $cid?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="phone" value="<?php echo $phone?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="btime" value="<?php echo $btime?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="bdays" value="<?php echo $bdays?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="clink" value="<?php echo $clink?>">&nbsp;&nbsp;</td>
+<td>&nbsp;<input type="submit" name="add" id="add" value="Add Checkin">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_cname; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_cid; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_phone; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red" id="err_room_no"><?php echo $err_room_no; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_btime; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_bdays; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $err_clink; ?>&nbsp;&nbsp;</td>
 </tr>
 </table>
-<center><input type="submit" name="save" id="save" value="Save">
+<script src ="checkAvailability.js"></script>
 
 </body>
 </html>
+
+<?php
+echo "<h1 align='center' style='color:brown'>All Checked In Customers</h1>";
+require_once "AllCheckin.php"; 
+?>
