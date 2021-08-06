@@ -186,10 +186,10 @@ elseif(isset($_POST["Book_Event"]))
 		$hasError = true;
 		$err_cname = " Description required";
 	}
-	else if(strlen($_POST["cname"])<= 10)
+	else if(strlen($_POST["cname"])<= 5)
 	{
 		$hasError = true;
-		$err_cname = " Customer Name must be greater than 10 characters";
+		$err_cname = " Customer Name must be greater than 5 characters";
 	}
 	else
 	{

@@ -19,11 +19,15 @@ if(isset($_POST["check"]))
 	/*$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);*/
+	$rs = deleteAvailable($_POST["room_no"]);
 	
+	if($rs === true)
+	{
 	$rs = checkRoomAvailability($_POST["room_no"]);
 	{
 	if($rs === false)
 	{
+	
 	$rs = inseertBooking($_POST["room_no"]);
 	if($rs === true)
 	{
@@ -37,12 +41,21 @@ if(isset($_POST["check"]))
 	}
 	}
 	}
+	}
 }
 
  function inseertBooking($room_no)
 {
 	$query = "insert into booked_rooms values (NULL,'$room_no')";
 	//$query = "insert into bookevent values (NULL,'$time','$cname',$cid, $members)";
+	return execute($query);
+}
+
+function deleteAvailable($room_no)
+{
+	
+	$query = "DELETE FROM available_rooms WHERE room_no=$room_no";
+	echo "$query";
 	return execute($query);
 }
 /* function updateProduct($name,$desc,$time,$avl,$id)

@@ -136,7 +136,7 @@ elseif(isset($_POST["Cancel_Checkin"]))
 	else{
 	$err_db = $rs;
 	}
-}
+	}
 }
 
 
@@ -168,6 +168,13 @@ function cancelBooking($room_no)
 	return execute($query);
 }
 
+function inseertAvlRooms($room_no)
+{
+	
+	$query = "insert into available_rooms values (NULL,'$room_no')";
+	//echo "$query";
+	return execute($query);
+}
 
 function getProducts()
 {
