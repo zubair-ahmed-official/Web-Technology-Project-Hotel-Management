@@ -3,13 +3,15 @@ error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/CatController.php';
 //require_once 'Controller/CategoryController.php';
 //$cat = getallcategory();
+session_start();
+$_SESSION["Category"] = "CATEGORY";
 ?>
 
 <html>
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return validate()"  method="post" enctype= "multipart/form-data">
-<h2 style="color:red" align ="center">ADD Category:</h2>
+<h2 style="color:red" align ="center">ADD <?php echo $_SESSION["Category"];?></h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Name:</b></td>
