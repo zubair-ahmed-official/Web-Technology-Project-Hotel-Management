@@ -8,9 +8,7 @@ $err_db = "";
 function getRooms()
 {
 	//$query = "SELECT p.*,c.name as 'c_name' from rooms p left join products1 c on p.c_id = c_id";
-	$query = "SELECT available_rooms.*, products1.name as 'c_name', products1.price as 'c_price'
-	FROM available_rooms
-	INNER JOIN products1 ON available_rooms.c_id=products1.id";
+	$query = "SELECT * from available_rooms";
 	$rs = get($query);
 	return $rs;
 }

@@ -31,7 +31,7 @@ if(isset($_POST["add_pro"]))
 	//$room_no = $_POST["room_no"];
 	//$c_id = $_POST["c_id"];
 	
-	$rs = inseertAvlRooms($_POST["room_no"],$_POST["c_id"]);
+	$rs = inseertAvlRooms($_POST["room_no"]);
 	if($rs === true)
 	{
 	$rs = inseertRooms($_POST["room_no"],$_POST["c_id"]);
@@ -52,7 +52,7 @@ elseif(isset($_POST["edit_room"]))
 	if($rs === true)
 	{
 		header("Location: Rooms.php");
-		$rs = updateAvlRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
+		//$rs = updateAvlRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
 	}
 	$err_db = $rs;
 	
@@ -66,10 +66,10 @@ function inseertRooms($room_no,$c_id)
 	return execute($query);
 }
 
-function inseertAvlRooms($room_no,$c_id)
+function inseertAvlRooms($room_no)
 {
 	
-	$query = "insert into available_rooms values (NULL,'$room_no',$c_id)";
+	$query = "insert into available_rooms values (NULL,'$room_no')";
 	//echo "$query";
 	return execute($query);
 }
@@ -97,12 +97,12 @@ function updateRooms($room_no,$c_id,$id)
 	echo $query;
 	return execute($query);
 }
-function updateAvlRooms($room_no,$c_id,$id)
+/* function updateAvlRooms($room_no,$c_id,$id)
 {
 	$query = "update available_rooms set available_rooms.room_no ='$room_no',available_rooms.c_id = $c_id where available_rooms.id = $id";
 	echo $query;
 	return execute($query);
-}
+} */
 
 /* function checkUsername ($uname) {
 $query = "select name from users where username='$uname'";

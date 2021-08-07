@@ -13,7 +13,7 @@ $hasError = false;
 if(isset($_POST["check"]))
 {
 	
-	echo "OK";
+	//echo "OK";
 	if(!$hasError)
 	{
 	/*$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
@@ -55,7 +55,7 @@ function deleteAvailable($room_no)
 {
 	
 	$query = "DELETE FROM available_rooms WHERE room_no=$room_no";
-	echo "$query";
+	//echo "$query";
 	return execute($query);
 }
 /* function updateProduct($name,$desc,$time,$avl,$id)

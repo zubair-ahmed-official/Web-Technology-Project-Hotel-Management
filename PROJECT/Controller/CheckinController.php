@@ -129,12 +129,17 @@ elseif(isset($_POST["Cancel_Checkin"]))
 	$rs = cancelBooking($_POST["room_no"]);
 	
 	if($rs === true)
+	{
+	$rs = inseertAvlRooms($_POST["room_no"]);
+	
+	if($rs === true)
 	{	
 	
 		header("Location: CustomerCheeckin.php");
 	}
 	else{
 	$err_db = $rs;
+	}
 	}
 	}
 }
