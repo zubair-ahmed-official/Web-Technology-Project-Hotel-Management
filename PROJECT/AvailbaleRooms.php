@@ -3,7 +3,9 @@ require_once 'Controller/AvailableRoomsController.php';
 $rooms = getRooms();
 echo "<h1 align='center' style='color:green'>AVAILABLE ROOMS</h1>";
 $i=1;
+echo "<h3 align='center' style='color:brown'>
 
+Search Available Rooms: <input type='text' onkeyup='searchAvlRooms(this)'><div id='suggesstion'></div><br>";
 foreach($rooms as $c)
 {
 	$id = $c["id"];
@@ -27,3 +29,4 @@ foreach($rooms as $c)
 }
 ?>
 
+<script src ="searchAvlRooms.js"></script>

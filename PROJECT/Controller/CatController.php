@@ -180,7 +180,7 @@ function deleteCat($id)
 {
 	
 	$query = "DELETE FROM products1 WHERE id=$id";
-	echo "$query";
+	//echo "$query";
 	return execute($query);
 }
 
@@ -201,7 +201,7 @@ function getProduct($id)
 function updateProduct($name,$price,$qty/* ,$img */,$description,$id)
 {
 	$query = "update products1 set name ='$name',price = $price,qty = $qty,description ='$description' where id = $id";
-	echo $query;
+	//echo $query;
 	return execute($query);
 }
 ?>

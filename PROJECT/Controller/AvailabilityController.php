@@ -79,4 +79,11 @@ return true;
 }
 return false;
 }
+/* function searchRooms($key)
+{
+	$query = "select * from available_rooms where room_no like '%$key%'";
+	$rs = get($query);
+	return $rs;
+} */
+
 ?>

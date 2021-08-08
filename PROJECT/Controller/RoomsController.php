@@ -97,6 +97,14 @@ function updateRooms($room_no,$c_id,$id)
 	echo $query;
 	return execute($query);
 }
+
+function searchRooms($key)
+{
+	//$query = "select * from rooms where room_no like '%$key%'";
+	$query = "select p.id,p.room_no from rooms p left join products1 c on p.c_id = c.id where p.room_no like '%$key%' or c.name like '%$key%'";
+	$rs = get($query);
+	return $rs;
+}
 /* function updateAvlRooms($room_no,$c_id,$id)
 {
 	$query = "update available_rooms set available_rooms.room_no ='$room_no',available_rooms.c_id = $c_id where available_rooms.id = $id";

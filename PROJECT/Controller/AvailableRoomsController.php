@@ -20,6 +20,13 @@ function getRoom($id)
 	return $rs[0];
 }
 
+function searchAvlRooms($key)
+{
+	$query = "select * from available_rooms where room_no like '%$key%'";
+	//$query = "select p.id,p.room_no from available_rooms p left join products1 c on p.c_id = c.id where p.room_no like '%$key%' or c.name like '%$key%'";
+	$rs = get($query);
+	return $rs;
+}
 /* function checkUsername ($uname) {
 $query = "select name from users where username='$uname'";
 $rs = get ($query) ;

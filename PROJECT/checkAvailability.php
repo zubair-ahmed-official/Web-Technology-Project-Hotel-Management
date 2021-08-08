@@ -10,6 +10,15 @@ if($user)
 else
 {
 	echo "Room not Booked";
-}
+} 
+/* $key = $_GET["key"];
+$rooms = searchRooms($key);
+if(count($rooms)>0)
+{
+	foreach($rooms as $p)
+	{
+		echo "<p>".$p["room_no"]."</p>";
+	}		
+} */
 
 ?>

@@ -4,6 +4,10 @@ $rooms = getRooms();
 echo "<h1 align='center' style='color:green'>All ROOMS</h1>";
 $i=1;
 
+echo "<h3 align='center' style='color:brown'>
+
+Search Rooms: <input type='text' onkeyup='searchRooms(this)'><div id='suggesstion'></div><br>";
+//echo "&nbsp;&nbsp;";
 foreach($rooms as $c)
 {
 	$id = $c["id"];
@@ -26,4 +30,4 @@ foreach($rooms as $c)
 	
 }
 ?>
-
+<script src ="searchRooms.js"></script>
