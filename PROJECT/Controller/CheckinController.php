@@ -158,7 +158,7 @@ function checkOut($id)
 {
 	
 	$query = "DELETE FROM customer_checkin WHERE id=$id";
-	echo "$query";
+	//echo "$query";
 	return execute($query);
 }
 function cancelBooking($room_no)
@@ -169,7 +169,7 @@ function cancelBooking($room_no)
 	FROM booked_rooms t1
 	JOIN customer_checkin t2 ON t1.room_no = t2.room_no;"; */
 	
-	echo "$query"; 
+	//echo "$query"; 
 	return execute($query);
 }
 

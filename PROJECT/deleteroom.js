@@ -2,18 +2,7 @@
 	{
 		return document.getElementById(id);
 	}
-	/* function validatePlates()
-	{
-		var plates = document.getElementsByName("c_id");
-		var flag =false;
-		for(var i=0;i<c_id.length;i++){
-			if(plates[i].selectedIndex > 0){
-			
-				return true;
-			}
-		}
-		return flag;
-	} */
+	
 	function validate()
 	{
 		refresh();
@@ -37,12 +26,7 @@
 		hasError = true;
 		get("err_c_id").innerHTML = "<span style='color: red;'>  Category required.</span>";
 		} 
-		/* if(!validatePlates())
-		{
-		hasError = true;
-		//var errs = document.getElementsByName("")
-		get("err_c_id").innerHTML = "<h3 style='color: red;'>  Checkin Time required.</h3>";
-		}   */
+		
 		
 		return !hasError;
 	}

@@ -21,7 +21,8 @@ foreach($rooms as $c)
 	echo "<td>".'<b>'.$c["c_price"].'</b>'.' BDT'."</td>";
 	/* echo "<td>".$c["qty"]."</td>";
 	echo "<td>".$c["desc"]."</td>"; */
-	echo '<td><a href= "EditRoom.php?id='.$c["id"].'"><input type="button" value="Update">  </a></td>';
+	echo '<td>&nbsp;&nbsp;&nbsp;<a href= "EditRoom.php?id='.$c["id"].'"><input type="button" value="Update">  </a> &nbsp;&nbsp;&nbsp;
+	<a href= "DeleteRoom.php?id='.$c["id"].'"><input type="button" value="Delete">  </a></td>';
 	echo "</tr>";
 	$i++;
 	echo "</table>";

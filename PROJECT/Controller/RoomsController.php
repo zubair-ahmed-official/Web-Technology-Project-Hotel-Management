@@ -2,6 +2,7 @@
 error_reporting (E_ALL ^ E_NOTICE);
 require_once "Models/db_config.php";
 
+$hasError = false;
 $err_db = "";
 if(isset($_POST["add_pro"]))
 {
@@ -9,6 +10,11 @@ if(isset($_POST["add_pro"]))
 	{
 		$hasError = true;
 		$err_room_no = " Room No. required";
+	}
+	elseif(strlen($_POST["room_no"]) != 4)
+	{
+		$hasError = true;
+		$err_room_no = "Room No. length must be 4";
 	}
 	else
 	{
@@ -30,7 +36,8 @@ if(isset($_POST["add_pro"]))
 	
 	//$room_no = $_POST["room_no"];
 	//$c_id = $_POST["c_id"];
-	
+	if(!$hasError)
+	{
 	$rs = inseertAvlRooms($_POST["room_no"]);
 	if($rs === true)
 	{
@@ -41,13 +48,27 @@ if(isset($_POST["add_pro"]))
 	}
 	$err_db = $rs;
 	}
+	}
 }
 elseif(isset($_POST["edit_room"]))
 {
-	//echo "OK";
+	if(empty($_POST["room_no"]))
+	{
+		$hasError = true;
+		$err_room_no = " Room No. required";
+	}
+	elseif(strlen($_POST["room_no"]) != 4)
+	{
+		$hasError = true;
+		$err_room_no = "Room No. length must be 4";
+	}
+	else
+	{
+		$room_no = $_POST["room_no"];
+	}
 	
-	
-	//echo "OK";
+	if(!$hasError)
+	{
 	$rs = updateRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
 	if($rs === true)
 	{
@@ -55,7 +76,41 @@ elseif(isset($_POST["edit_room"]))
 		//$rs = updateAvlRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
 	}
 	$err_db = $rs;
+	}
 	
+}
+
+elseif(isset($_POST["delete_room"]))
+{
+	if(empty($_POST["room_no"]))
+	{
+		$hasError = true;
+		$err_room_no = " Room No. required";
+	}
+	elseif(strlen($_POST["room_no"]) != 4)
+	{
+		$hasError = true;
+		$err_room_no = "Room No. length must be 4";
+	}
+	else
+	{
+		$room_no = $_POST["room_no"];
+	}
+	
+	if(!$hasError)
+	{
+	$rs = deleteRooms($_POST["id"]);
+	if($rs === true)
+	{
+	$rs = deleteAvlRooms($_POST["room_no"]);
+	if($rs === true)
+	{
+		header("Location: Rooms.php");
+		//$rs = updateAvlRooms($_POST["room_no"],$_POST["c_id"],$_POST["id"]);
+	}
+	$err_db = $rs;
+	}
+	}
 }
 
 function inseertRooms($room_no,$c_id)
@@ -95,6 +150,21 @@ function updateRooms($room_no,$c_id,$id)
 {
 	$query = "update rooms set room_no ='$room_no',c_id = $c_id where id = $id";
 	echo $query;
+	return execute($query);
+}
+
+function deleteRooms($id)
+{
+	
+	$query = "DELETE FROM rooms WHERE id=$id";
+	//echo "$query";
+	return execute($query);
+}
+function deleteAvlRooms($room_no)
+{
+	
+	$query = "DELETE FROM available_rooms WHERE room_no=$room_no";
+	//echo "$query";
 	return execute($query);
 }
 

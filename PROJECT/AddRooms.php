@@ -13,7 +13,7 @@ $cat = getProducts();
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Room No: &nbsp;</b></td>
-<td>&nbsp;<input type="text" id = "room_no" name = "room_no"><?php echo $err_room_no; ?><span id="err_room_no"></span> </td></tr>
+<td>&nbsp;<input type="number" id = "room_no" name = "room_no"><?php echo $err_room_no; ?><span id="err_room_no"></span> </td></tr>
 <tr><td align="right"><b>Category: &nbsp;</b></td></span>
 <td>&nbsp;<select id="c_id" name="c_id">
 <option> Choose </option>
