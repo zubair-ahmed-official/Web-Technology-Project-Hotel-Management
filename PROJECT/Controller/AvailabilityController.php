@@ -12,13 +12,17 @@ $hasError = false;
 
 if(isset($_POST["check"]))
 {
-	
-	//echo "OK";
-	if(!$hasError)
-	{
 	/*$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);*/
+	//echo "OK";
+	if(!$hasError)
+	{
+	$rs = checkRoomExisting($_POST["room_no"]);
+	
+	if($rs === true)
+	{
+	
 	$rs = deleteAvailable($_POST["room_no"]);
 	
 	if($rs === true)
@@ -38,6 +42,7 @@ if(isset($_POST["check"]))
 	else
 	{
 		$err_db = "<h2 style='color:red;' align =center> Booking is not complete</h2>";
+	}
 	}
 	}
 	}
@@ -72,6 +77,16 @@ function updateProduct($name,$desc,$time,$avl)
 
 function checkRoomAvailability($room_no) {
 $query = "select room_no from booked_rooms where room_no='$room_no'";
+$rs = get ($query) ;
+if(count($rs) > 0) 
+{
+return true;
+}
+return false;
+}
+
+function checkRoomExisting($room_no) {
+$query = "select room_no from rooms where room_no='$room_no'";
 $rs = get ($query) ;
 if(count($rs) > 0) 
 {

@@ -3,7 +3,7 @@ require_once 'Controller/CheckinController.php';
 ?>
 <html>
 <body>
-<form  onsubmit="return validate()" method="post"> <!--method="post" -->
+<form  onsubmit="return validate()" method="post"> <!--method="post" checkRoomAvailability(this) -->
 <table>
 <h1 style='color:rgb(128, 0, 64)'>Customers Checkin</h1>
 
@@ -12,7 +12,7 @@ require_once 'Controller/CheckinController.php';
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cname" name="cname" value="<?php echo $cname?>" >&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cid" name="cid" value="<?php echo $cid?>" >&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="phone" name="phone" value="<?php echo $phone?>" >&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="room_no" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="room_no" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this) ; checkRoomExisting(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="btime" name="btime" value="<?php echo $btime?>">&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="bdays" name="bdays" value="<?php echo $bdays?>">&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="clink" name="clink" value="<?php echo $clink?>">&nbsp;&nbsp;</td>
@@ -29,6 +29,7 @@ require_once 'Controller/CheckinController.php';
 </tr>
 </table>
 <script src ="checkAvailability.js"></script>
+<script src ="roomExisting.js"></script>
 <script src ="checkin.js"></script>
 
 </body>

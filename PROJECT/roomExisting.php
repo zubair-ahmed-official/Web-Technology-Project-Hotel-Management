@@ -2,14 +2,14 @@
 require_once 'Controller/AvailabilityController.php';
 //require_once 'CustomerCheeckin.php';
 $room_no = $_GET["room_no"];
-$user = checkRoomAvailability($room_no);
+$user = checkRoomExisting($room_no);
 if($user)
 {
-	echo "Room Booked";
+	echo "Room Exists";
 }
 else
 {
-	echo "Room not Booked";
+	echo "Room does not Exist";
 } 
 
 /* $key = $_GET["key"];
