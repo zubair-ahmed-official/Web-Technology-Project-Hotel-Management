@@ -17,7 +17,7 @@ $_SESSION["Category"] = "CATEGORY";
 <tr><td align="right"><b>Name:</b></td>
 <td>&nbsp;<input type="text" id = "name" name = "name"> <?php echo $err_name; ?> <span id = "err_name"></span> </td></tr>
 <tr><td align="right"><b>Price:</b></td>
-<td>&nbsp;<input type="text" id = "price" name = "price"><?php echo $err_price; ?> <span id = "err_price"></span></td></tr>
+<td>&nbsp;<input type="number" id = "price" name = "price"><?php echo $err_price; ?> <span id = "err_price"></span></td></tr>
 <!--<p>Category:</p>
 <select name="c_id">
 <option disabled selected>Choose</option>
@@ -29,7 +29,7 @@ $_SESSION["Category"] = "CATEGORY";
 ?>
 </select><span id = "err_p_image"></span>-->
 <tr><td align="right"><b>Number of Beds:</b></td>
-<td>&nbsp;<input type="text" id = "qty" name = "qty"><?php echo $err_qty; ?><span id = "err_qty"></span> </td></tr>
+<td>&nbsp;<input type="number" id = "qty" name = "qty"><?php echo $err_qty; ?><span id = "err_qty"></span> </td></tr>
 <tr><td align="right"><b>Description:</b></td>
 <td>&nbsp;<input type="text" id = "description" name = "description"><?php echo $err_desc; ?><span id = "err_description"></span> </td></tr>
 <tr><td align="right"><b>Image:</b></td>

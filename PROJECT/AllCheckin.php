@@ -9,6 +9,7 @@ foreach($pro as $c)
 {
 	$id = $c["id"];
 	echo "<table style='border-color: brown' align='center' width='80%' height='30%' border = '3'>";
+	//echo "<tr><td colspan='10'>All Checked In Customers</td></tr>";
 	echo "<tr><td><b>No. </b></td><td><b>Customer Name: </b></td><td><b>Customer ID:</b></td>  <td><b>Phone:</b></td> <td><b>Room no:</b> </td> 
 	<td><b> Checkin Time: </b></td> <td><b> Checkout Time: </b></td><td><b> Customer account link:</b></td> </tr>";
 	echo "<tr>";

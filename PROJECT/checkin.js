@@ -12,6 +12,15 @@ function get(id)
 		hasError = true;
 		get("err_cname").innerHTML = "<span style='color: red;'>Customer Name required.</span>";
 		}
+		else if(get("cname").value.length > 0)
+		{
+		if(get("cname").value.length < 5)
+		{
+		hasError = true;
+		get("err_cname").innerHTML = "<span style='color: red;'>Minimum 5 characters.</span>";
+		}
+		}
+		
 		
 		if(get("cid").value == "")
 		{
@@ -23,6 +32,15 @@ function get(id)
 		{
 		hasError = true;
 		get("err_phone").innerHTML = "<span style='color: red;'>Phone required.</span>";
+		} 
+		
+		else if(get("phone").value.length > 0)
+		{
+		if(get("phone").value.length != 11)
+		{
+		hasError = true;
+		get("err_phone").innerHTML = "<span style='color: red;'>Invalid Phone Number.</span>";
+		}
 		}
 
 		if(get("room_no").value == "")

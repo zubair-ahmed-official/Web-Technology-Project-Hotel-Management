@@ -211,4 +211,20 @@ function updateProduct($cname,$cid,$phone,$room_no,$btime,$bdays,$clink,$id)
 	//echo $query;
 	return execute($query);
 } 
+
+function searchCheckin($key)
+{
+	$query = "select * from customer_checkin where room_no like '%$key%'";
+	//$query = "select p.id,p.room_no from rooms p left join products1 c on p.c_id = c.id where p.room_no like '%$key%' or c.name like '%$key%'";
+	$rs = get($query);
+	return $rs;
+}
+
+function searchCheckinCust($key)
+{
+	$query = "select * from customer_checkin where cname like '%$key%' or cid like '%$key%' or phone like '%$key%'";
+	//$query = "select p.id,p.room_no from rooms p left join products1 c on p.c_id = c.id where p.room_no like '%$key%' or c.name like '%$key%'";
+	$rs = get($query);
+	return $rs;
+}
 ?>

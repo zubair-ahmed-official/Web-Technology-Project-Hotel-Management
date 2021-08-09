@@ -7,7 +7,7 @@ $c = getProduct($id);
 <body>
 <h1 style="color:blue;" align ="center">Welcome Admin</h1>
 <form action="" method="post">
-<h2 style="color:red;" align ="center">Edit Customer Checkin:</h2>
+<h2 style="color:red;" align ="center">Update Customer Checkin:</h2>
 <span><?php echo $err_db; ?></span>
 <table style="border-color:green; width:40%; height:70%;" align="center" border="4">
 <input type="hidden" name= "id" value = "<?php echo $c["id"]; ?>">
@@ -20,7 +20,8 @@ $c = getProduct($id);
 <tr><td align="right"><b>Customer Chekout Time:</b></td><td>&nbsp;<input type="textarea" name= "bdays" value = "<?php echo $c["bdays"]; ?>"><span><?php echo $err_bdays?></span></td> </tr>
 <tr><td align="right"><b>Customer Link:</b></td><td>&nbsp;<input type="textarea" name= "clink" value = "<?php echo $c["clink"]; ?>"><span><?php echo $err_clink?></span></td> </tr>
 <tr><td ><b></b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" name= "Edit_Checkin" value="Edit" ></td></tr>
+<input type="submit" name= "Edit_Checkin" value="Edit" >&nbsp;&nbsp;
+<input type="submit" name= "Cancel_Checkin" value="Chekout" ></td></tr>
 </table>
 </body>
 </html>
