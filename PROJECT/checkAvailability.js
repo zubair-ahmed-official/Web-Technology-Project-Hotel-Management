@@ -14,11 +14,13 @@ if(this.readyState == 4 && this.status == 200)
 {
 if (this.responseText.trim() == "Room Booked")
 {
-get("err_room_no").innerHTML = "Room is not available";
+get("err_room_no").innerHTML = "Room is Booked";
+//get("err_RoomNo").innerHTML = "Rooms is booked";
 }
 else
 {
-   get("err_room_no").innerHTML = "";
+   get("err_room_no").innerHTML = "Room is not Booked";
+   
 }
 }
 };

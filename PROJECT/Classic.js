@@ -50,6 +50,14 @@ function get(id)
 		hasError = true;
 		get("err_phone").innerHTML = "<h3 style='color: red;'>  Phone required.</h3>";
 		}
+		else if(get("phone").value.length > 0)
+		{
+		if(get("phone").value.length != 11)
+		{
+		hasError = true;
+		get("err_phone").innerHTML = "<h3 style='color: red;'> Invalid Phone Number.</h3>";
+		}
+		}
 
 		if(get("Cid").value == "")
 		{
