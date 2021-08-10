@@ -10,7 +10,7 @@ require_once 'Controller/CheckinController.php';
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer Name: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b></td>  <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Phone:</b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Room no:</b> </td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkin Time: </b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Checkout Time: </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b> Customer account link:</b></td> </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cname" name="cname" value="<?php echo $cname?>" >&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cid" name="cid" value="<?php echo $cid?>" >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="cid" name="cid" value="<?php echo $cid?>" onfocusout="customerIdExisting(this)" >&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="phone" name="phone" value="<?php echo $phone?>" >&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="room_no" name="room_no"  value="<?php echo $room_no?>" onfocusout="checkRoomAvailability(this) ; checkRoomExisting(this)"><?php //echo $err_room_no; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="btime" name="btime" value="<?php echo $btime?>">&nbsp;&nbsp;</td>
@@ -20,7 +20,7 @@ require_once 'Controller/CheckinController.php';
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_cname"  ></span><?php echo $err_cname; ?>&nbsp;&nbsp;</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_cid"  ></span><?php echo $err_cid; ?>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red" id="err_cid"  ></span><?php echo $err_cid; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_phone"  ></span><?php echo $err_phone; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red" id="err_room_no"><?php echo $err_room_no; ?>&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;<span id="err_btime"  ></span><?php echo $err_btime; ?>&nbsp;&nbsp;</td>
@@ -43,6 +43,7 @@ require_once 'Controller/CheckinController.php';
 <script src ="checkin.js"></script>
 <script src ="searchCheckin.js"></script>
 <script src ="searchCheckinCust.js"></script>
+<script src ="customerIdExisting.js"></script>
 
 </body>
 </html>

@@ -81,6 +81,10 @@ if(isset($_POST["add"]))
 	
 	if(!$hasError)
 	{
+	$rs = customerIdExisting($_POST["cid"]);
+	{
+	if($rs === true)
+	{
 	$rs = checkRoomAvailability($_POST["room_no"]);
 	{
 	if($rs === false)
@@ -100,6 +104,8 @@ if(isset($_POST["add"]))
 		//header("Location: AllProducts.php");
 	}
 	$err_db = $rs;
+	}
+	}
 	}
 	}
 }
@@ -204,6 +210,19 @@ return true;
 }
 return false;
 }
+
+
+function customerIdExisting($cid) {
+$query = "select customerId from customers where customerId ='$cid'";
+$rs = get ($query) ;
+if(count($rs) > 0) 
+{
+return true;
+}
+return false;
+}
+
+
 
 function updateProduct($cname,$cid,$phone,$room_no,$btime,$bdays,$clink,$id)
 {
