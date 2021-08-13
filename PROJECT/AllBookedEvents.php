@@ -16,8 +16,9 @@ $i=1;
 foreach($events as $c)
 {
 	$id = $c["id"];
-	echo "<table align='center' style='width:50%; height:30%;' border = '4'>";
-	echo "<tr><td>ID</td><td>Event Name:</td><td>Customer Name:</td><td>Customer ID:</td><td>Number of Members:</td>";
+	echo "<table align='center' style='width:80%; height:35%;' border = '4'>";
+	echo "<tr><td>ID</td><td>Event Name:</td><td>Customer Name:</td><td>Customer ID:</td><td>Number of Members:</td>
+	<td>Phone:</td><td>E-Mail:</td><td>Customer ID Link:</td>";
 	
 	echo "<tr>";
 	echo "<td>$i.</td>";
@@ -25,6 +26,9 @@ foreach($events as $c)
 	echo '<td>'.'<b>'.$c["cname"].'</b>'.'</td>';
 	echo "<td>".'<b>'.$c["cid"].'</b>'."</td>";
 	echo "<td>".'<b>'.$c["members"].'</b>'."</td>";
+	echo "<td>".'<b>'.$c["phone"].'</b>'."</td>";
+	echo "<td>".'<b>'.$c["email"].'</b>'."</td>";
+	echo "<td>".'<b>'.$c["clink"].'</b>'."</td>";
 	/* echo "<td>".$c["qty"]."</td>";
 	echo "<td>".$c["desc"]."</td>"; */
 	
