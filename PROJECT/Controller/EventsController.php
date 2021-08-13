@@ -170,7 +170,7 @@ elseif(isset($_POST["edit_event"]))
 }
 elseif(isset($_POST["Book_Event"]))
 {
-	if(empty($_POST["ename"]))
+	if(!isset($_POST["ename"]))
 	{
 		$hasError = true;
 		$err_ename = " Name required";
@@ -223,23 +223,23 @@ elseif(isset($_POST["Book_Event"]))
 	/*$filetype = strtolower(pathinfo(basename($_FILES["p_image"]["name"]),PATHINFO_EXTENSION));
 	$target = "storage/product_images/".uniqid().".$filetype";
 	move_uploaded_file($_FILES["p_image"]["tmp_name"],$target);*/
-	$rs = checkEventname($_POST["ename"]);
+	/* $rs = checkEventname($_POST["ename"]);
 	
 	if($rs === true)
-	{
+	{ */
 	$rs = inseertBooking($_POST["ename"],$_POST["cname"],$_POST["cid"],$_POST["members"]);
 	if($rs === true)
 	{
 		//header("Location: Category.php");
 	}
-	$err_db = "<h2 style='color:green;' align =center> Booking Complete. Thank you.</h2>";
+	$err_db = "<h2 style='color:green;' align =center> Booking Complete. Thank you.
+	<br> Event Name: ".$_POST["ename"]."</h2>";
 	}
 	else
 	{
 		$err_db = "<h2 style='color:red;' align =center> Booking is not complete</h2>";
 	}
 	
-	}
 }
 
 elseif(isset($_POST["Delete_Event"]))

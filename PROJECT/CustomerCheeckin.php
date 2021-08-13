@@ -1,5 +1,7 @@
 <?php 
+require_once 'main_header.php';
 require_once 'Controller/CheckinController.php';
+
 ?>
 <html>
 <body>
@@ -38,12 +40,12 @@ require_once 'Controller/CheckinController.php';
 
 <tr><td><?php echo "<h3 align='center' style='color:blue'>Search CheckedIn Customers: <input type='text' onkeyup='searchCheckinCust(this)'><div id='suggesstion2'></div><br>"?></td>
 </table>
-<script src ="checkAvailability.js"></script>
-<script src ="roomExisting.js"></script>
-<script src ="checkin.js"></script>
-<script src ="searchCheckin.js"></script>
-<script src ="searchCheckinCust.js"></script>
-<script src ="customerIdExisting.js"></script>
+<script src ="JS/checkAvailability.js"></script>
+<script src ="JS/roomExisting.js"></script>
+<script src ="JS/checkin.js"></script>
+<script src ="JS/searchCheckin.js"></script>
+<script src ="JS/searchCheckinCust.js"></script>
+<script src ="JS/customerIdExisting.js"></script>
 
 </body>
 </html>

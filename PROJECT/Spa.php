@@ -1,5 +1,6 @@
 <?php
 require_once "Models/db_config.php";
+require_once 'main_header.php';
 $hear = [];
 $err_hear = "";
 $id= "";

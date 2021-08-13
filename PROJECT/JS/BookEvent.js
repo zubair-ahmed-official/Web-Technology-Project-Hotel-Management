@@ -8,7 +8,7 @@ function get(id)
 		//alert("OK");
 		refresh();
 		
-		if(get("ename").value == "")
+		if(get("ename").selectedIndex == 0)
 		{
 		hasError = true;
 		get("err_ename").innerHTML = "<span style='color: red;'>  Event Name required.</span>";

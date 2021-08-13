@@ -1,5 +1,6 @@
 <?php 
 error_reporting (E_ALL ^ E_NOTICE);
+require_once 'main_header.php';
 require_once "Models/db_config.php";
 function getFood($id)
 {

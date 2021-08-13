@@ -13,7 +13,7 @@
 			<td colspan="3"><hr></td>
 		</tr>
 		<tr>
-			<td>Want to Add Customer?<td>
+			<td>Add Customer<td>
 			<td><a href ="CustomerAdd.php"><input type="button" value="Add"> </a></td>
 		</tr>
 	</table>		

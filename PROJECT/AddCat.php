@@ -1,4 +1,5 @@
 <?php
+require_once 'main_header.php';
 error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/CatController.php';
 //require_once 'Controller/CategoryController.php';
@@ -36,7 +37,7 @@ $_SESSION["Category"] = "CATEGORY";
 <td>&nbsp;<input type="file" id="p_image" name="p_image"><?php echo $err_img; ?> </td></tr>
 <tr><td></td>
 <td>&nbsp;<input type="submit" name ="add_pro" value="Add" ></td></tr>
-<script src = "Category.js"></script>
+<script src = "JS/Category.js"></script>
 </table>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'main_header.php';
 require_once 'Controller/CheckinController.php';
 require_once 'CustomerCheeckin.php';
 $pro = getProducts();

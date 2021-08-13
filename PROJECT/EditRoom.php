@@ -34,6 +34,6 @@ foreach($cat as $c)
 
 <td>&nbsp;<input type="submit" name ="edit_room" value="Update" ></td></tr>
 </table>
-<script src ="editroom.js"></script> 
+<script src ="JS/editroom.js"></script> 
 </body>
 </html>

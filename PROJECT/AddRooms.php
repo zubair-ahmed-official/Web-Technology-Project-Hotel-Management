@@ -1,5 +1,6 @@
 <?php
 error_reporting (E_ALL ^ E_NOTICE);
+require_once 'main_header.php';
 require_once 'Controller/RoomsController.php';
 require_once 'Controller/CatController.php';
 $cat = getProducts();
@@ -30,6 +31,6 @@ foreach($cat as $c)
 <td></td><td>&nbsp;<input type="submit" name ="add_pro" value="Add Room" > </td>
 </table>
 
-<script src ="addroom.js"></script> 
+<script src ="JS/addroom.js"></script> 
 </body>
 </html>

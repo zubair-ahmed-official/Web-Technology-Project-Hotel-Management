@@ -131,6 +131,10 @@ elseif(isset($_POST["Cancel_Checkin"]))
 	
 	if($rs === true)
 	{
+	$rs = deleteRoom($_POST["room_no"]);
+	
+	if($rs === true)
+	{
 	
 	$rs = cancelBooking($_POST["room_no"]);
 	
@@ -145,6 +149,7 @@ elseif(isset($_POST["Cancel_Checkin"]))
 	}
 	else{
 	$err_db = $rs;
+	}
 	}
 	}
 	}
@@ -176,6 +181,13 @@ function cancelBooking($room_no)
 	JOIN customer_checkin t2 ON t1.room_no = t2.room_no;"; */
 	
 	//echo "$query"; 
+	return execute($query);
+}
+function deleteRoom($room_no)
+{
+	
+	$query = "DELETE from bookingrooms where RoomNo=$room_no";
+	//echo "$query";
 	return execute($query);
 }
 

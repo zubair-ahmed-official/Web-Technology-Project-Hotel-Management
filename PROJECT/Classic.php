@@ -1,5 +1,6 @@
 <?php
 require_once "Models/db_config.php";
+require_once 'main_header.php';
 error_reporting (E_ALL ^ E_NOTICE);
 $hear = [];
 $err_hear = "";
@@ -261,8 +262,8 @@ return false;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<img width="550px" height="300px" src="Classic2.jpg">
-	<script src= "Classic.js" ></script>
-	<script src= "customerIdExisting.js" ></script>
-	<script src ="checkAvailability.js"></script>
+	<script src= "JS/Classic.js" ></script>
+	<script src= "JS/customerIdExisting.js" ></script>
+	<script src ="JS/checkAvailability.js"></script>
 	</body>
 </html>

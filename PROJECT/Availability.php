@@ -1,4 +1,5 @@
 <?php
+require_once 'main_header.php';
 error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/AvailabilityController.php';
 //require_once 'Controller/CatController.php';
@@ -27,6 +28,6 @@ require_once 'Controller/AvailabilityController.php';
 
 <td></td><td>&nbsp;<input type="submit" name ="check" value="Check" > </td>
 </table>
-<script src ="checkAvailability.js"></script> <!--onsubmit = "return(validate());-->
+<script src ="JS/checkAvailability.js"></script> <!--onsubmit = "return(validate());-->
 </body>
 </html>

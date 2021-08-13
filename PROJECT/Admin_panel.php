@@ -1,3 +1,4 @@
+<?php require_once 'main_header.php';?>
 <html>
 <body>
 	<table style="border-color:blue; width:40%; height:40%;" align="center" border="4">

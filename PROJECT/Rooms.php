@@ -1,5 +1,6 @@
 <?php
 require_once 'Controller/RoomsController.php';
+require_once 'main_header.php';
 $rooms = getRooms();
 echo "<h1 align='center' style='color:green'>All ROOMS</h1>";
 $i=1;
@@ -31,4 +32,4 @@ foreach($rooms as $c)
 	
 }
 ?>
-<script src ="searchRooms.js"></script>
+<script src ="JS/searchRooms.js"></script>

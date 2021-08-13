@@ -15,7 +15,7 @@ function getFoods()
 $pro = getFoods();
 
 $i=1;
-setcookie("Foods", "Foods", time() + 120);
+setcookie("Foods", "Foods", time() + 1000);
 
 echo "<h1 align='center' style='color: blue'> Ordered ".$_COOKIE["Foods"].'</h1>';
 foreach($pro as $c)

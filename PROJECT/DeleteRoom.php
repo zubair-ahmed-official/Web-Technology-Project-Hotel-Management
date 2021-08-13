@@ -1,5 +1,6 @@
 <?php
 error_reporting (E_ALL ^ E_NOTICE);
+require_once 'main_header.php';
 require_once 'Controller/RoomsController.php';
 require_once 'Controller/CatController.php';
 error_reporting(0);
@@ -34,6 +35,6 @@ $_SESSION["Rooms"] = "ROOMS";
 
 <td>&nbsp;<input type="submit" name ="delete_room" value="Delete" ></td></tr>
 </table>
-<script src ="deleteroom.js"></script> 
+<script src ="JS/deleteroom.js"></script> 
 </body>
 </html>

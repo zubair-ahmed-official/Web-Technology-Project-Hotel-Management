@@ -1,5 +1,6 @@
 <?php 
 require_once 'Controller/CheckinController.php';
+require_once 'main_header.php';
 $id = $_GET["id"];
 $c = getProduct($id);
 ?>

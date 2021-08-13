@@ -1,5 +1,6 @@
 <?php
 error_reporting (E_ALL ^ E_NOTICE);
+require_once 'main_header.php';
 require_once 'Controller/EventsController.php';
 //require_once 'Controller/CategoryController.php';
 //$cat = getallcategory();
@@ -35,7 +36,7 @@ require_once 'Controller/EventsController.php';
 <td>&nbsp;<input type="file" id="p_image" name="p_image"><?php //echo $err_img; ?> </td></tr>
 <tr><td></td>
 <td>&nbsp;<input type="submit" name ="add_event" value="Add" ></td></tr>
-<script src = "Event.js"></script>
+<script src = "JS/Event.js"></script>
 </table>
 </body>
 </html>

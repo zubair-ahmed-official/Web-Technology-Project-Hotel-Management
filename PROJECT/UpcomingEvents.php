@@ -1,4 +1,5 @@
 <?php
+		require_once 'main_header.php';
 		require_once 'Controller/EventsController.php';
 		$pro = getProducts();
 		

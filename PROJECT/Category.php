@@ -73,10 +73,13 @@
 			</tr>-->
 		<?php
 		require_once 'Controller/CatController.php';
+		require_once 'main_header.php';
+		session_start();
+		$_SESSION["Category"] = "CATEGORY";
 		$pro = getProducts();
 		
 		$i=1;
-		echo "<h1 style='color:green' align='center'><b>Room Categories</b></h1>";
+		echo "<h1 style='color:green' align='center'><b>ROOM ".$_SESSION['Category']."</b></h1>";
 
 		foreach($pro as $c)
 		{

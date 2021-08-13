@@ -15,11 +15,11 @@ if(this.readyState == 4 && this.status == 200)
 {
 if (this.responseText.trim() == "Event exists")
 {
-get("err_ename").innerHTML = " Event Found";
+get("err_ename").innerHTML = "Event Found";
 }
 else
 {
-   get("err_ename").innerHTML = " Event doesn't Exist";
+   get("err_ename").innerHTML = "Event doesn't Exist";
 }
 }
 };

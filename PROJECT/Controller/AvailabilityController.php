@@ -49,7 +49,7 @@ if(isset($_POST["check"]))
 	}
 }
 
- function inseertBooking($room_no)
+function inseertBooking($room_no)
 {
 	$query = "insert into booked_rooms values (NULL,'$room_no')";
 	//$query = "insert into bookevent values (NULL,'$time','$cname',$cid, $members)";
