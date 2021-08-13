@@ -217,6 +217,37 @@ elseif(isset($_POST["Book_Event"]))
 		$members = $_POST["members"];
 	}
 	
+	if(empty($_POST["phone"]))
+	{
+		$hasError = true;
+		$err_phone = " Phone Required";
+	}
+	else
+	{
+		$phone = $_POST["phone"];
+	}
+	
+	if(empty($_POST["email"]))
+	{
+		$hasError = true;
+		$err_email = " Email Required";
+	}
+	else if(strpos($_POST["email"],"@") && strpos($_POST["email"],".") )
+	{
+		$email = $_POST["email"];
+	}
+	
+	
+	if(empty($_POST["clink"]))
+	{
+		$hasError = true;
+		$err_clink = " Customer Link Required";
+	}
+	else
+	{
+		$clink = $_POST["clink"];
+	}
+	
 	
 	if(!$hasError)
 	{
@@ -227,7 +258,7 @@ elseif(isset($_POST["Book_Event"]))
 	
 	if($rs === true)
 	{ */
-	$rs = inseertBooking($_POST["ename"],$_POST["cname"],$_POST["cid"],$_POST["members"]);
+	$rs = inseertBooking($_POST["ename"],$_POST["cname"],$_POST["cid"],$_POST["members"],$_POST["phone"],$_POST["email"],$_POST["clink"]);
 	if($rs === true)
 	{
 		//header("Location: Category.php");
@@ -315,9 +346,9 @@ function inseertProduct($name,$description,$time,$avl,$img)
 	$query = "insert into events values (NULL,'$name','$description','$time','$avl','$img')";
 	return execute($query);
 }
- function inseertBooking($ename,$cname,$cid,$members)
+ function inseertBooking($ename,$cname,$cid,$members,$phone,$email,$clink)
 {
-	$query = "insert into bookevent values (NULL,'$ename','$cname',$cid, $members)";
+	$query = "insert into bookevent values (NULL,'$ename','$cname',$cid, $members,$phone,'$email','$clink')";
 	//$query = "insert into bookevent values (NULL,'$time','$cname',$cid, $members)";
 	return execute($query);
 }
@@ -339,7 +370,7 @@ function deleteEvent($id)
 {
 	
 	$query = "DELETE FROM events WHERE id=$id";
-	echo "$query";
+	//echo "$query";
 	return execute($query);
 }
 /* function updateProduct($name,$desc,$time,$avl,$id)
