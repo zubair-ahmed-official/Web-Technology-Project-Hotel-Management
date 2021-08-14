@@ -6,15 +6,15 @@ error_reporting(0);
 $id = $_GET["id"];
 $c = getRoom($id);
 $cat = getProducts();
-session_start();
-$_SESSION["Rooms"] = "ROOMS";
+//session_start();
+//$_SESSION["Rooms"] = "ROOMS";
 ?>
 
 <html>
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return(validate());" method="post">
-<h2 style="color:red" align ="center">UPDATE <?php echo $_SESSION["Rooms"];?></h2>
+<h2 style="color:red" align ="center">UPDATE <?php echo $_COOKIE["ROOMS"];?></h2>
 <span> <?php echo $err_db; ?></span>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>

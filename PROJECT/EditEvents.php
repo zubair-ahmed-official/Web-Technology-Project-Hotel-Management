@@ -5,16 +5,17 @@ error_reporting(0);
 require_once 'main_header.php';
 $id = $_GET["id"];
 $c = getProduct($id);
-setcookie($Events,"Events", time() + (120));
+//setcookie($Events,"Events", time() + (120));
 //require_once 'Controller/CategoryController.php';
 //$cat = getallcategory();
+session_start();
 ?>
 
 <html>
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return(validate());" method="post">
-<h2 style="color:red" align ="center">Update <?php echo $_COOKIE["Events"]; ?></h2>
+<h2 style="color:red" align ="center">UPDATE <?php echo $_SESSION["EVENTS"]; ?></h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Event Name:</b></td>

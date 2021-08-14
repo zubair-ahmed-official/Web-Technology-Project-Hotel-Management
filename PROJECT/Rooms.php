@@ -2,7 +2,8 @@
 require_once 'Controller/RoomsController.php';
 require_once 'main_header.php';
 $rooms = getRooms();
-echo "<h1 align='center' style='color:green'>All ROOMS</h1>";
+setcookie("ROOMS","ROOMS",time()+(500));
+echo "<h1 align='center' style='color:green'> All ".$_COOKIE["ROOMS"]."</h1>";
 $i=1;
 
 echo "<h3 align='center' style='color:brown'>

@@ -3,12 +3,13 @@ require_once 'main_header.php';
 require_once 'Controller/CatController.php';
 $id = $_GET["id"];
 $c = getProduct($id);
+session_start();
 ?>
 <html>
 <body>
 <h1 style="color:blue;" align ="center">Welcome Admin</h1>
 <form action="" method="post">
-<h2 style="color:red;" align ="center">Delete Category:</h2>
+<h2 style="color:red;" align ="center">Delete <?php echo $_SESSION["Category"];?>:</h2>
 <span><?php echo $err_db; ?></span>
 <table style="border-color:green; width:40%; height:70%;" align="center" border="4">
 <input type="hidden" name= "id" value = "<?php echo $c["id"]; ?>">

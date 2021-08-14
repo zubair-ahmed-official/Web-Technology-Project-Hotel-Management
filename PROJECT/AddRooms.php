@@ -4,13 +4,14 @@ require_once 'main_header.php';
 require_once 'Controller/RoomsController.php';
 require_once 'Controller/CatController.php';
 $cat = getProducts();
+setcookie("ROOMS","ROOMS",time()+(500));
 ?>
 
 <html>
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action=""  method="post" onsubmit = "return(validate());" enctype= "multipart/form-data">
-<h2 style="color:red" align ="center">ADD Rooms:</h2>
+<h2 style="color:red" align ="center">ADD <?php echo $_COOKIE["ROOMS"];?> :</h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Room No: &nbsp;</b></td>

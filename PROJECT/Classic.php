@@ -191,12 +191,12 @@ return true;
 }
 return false;
 }
-
+setcookie("Foods", "Foods", time() + 1000);
 ?>
 
 <html>
     <body>
-	<h1 align = "center" style= "color: rgb(128, 0, 0)"> Order Food </h1>
+	<h1 align = "center" style= "color: rgb(128, 0, 0)"> Order <?php echo $_COOKIE["Foods"]; ?> </h1>
 	<form action="" onsubmit="return validate()" method="post">
 	<table border="5" align="center" style= "border-color: rgb(115, 38, 38);">
 	
@@ -261,7 +261,7 @@ return false;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="550px" height="300px" src="Classic2.jpg">
+	<img width="550px" height="300px" src="Pictures/Classic2.jpg">
 	<script src= "JS/Classic.js" ></script>
 	<script src= "JS/customerIdExisting.js" ></script>
 	<script src ="JS/checkAvailability.js"></script>

@@ -9,13 +9,13 @@ require_once 'main_header.php';
 $id = $_GET["id"];
 $c = getProduct($id);
 $cat = getProducts();
-
+session_start();
 ?>
 <html>
 <body>
 <h1 style="color:blue;" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return(validate());" method="post">
-<h2 style="color:brown;" align ="center">Book for Event:</h2>
+<h2 style="color:brown;" align ="center">BOOK  <?php echo $_SESSION["EVENTS"]; ?>:</h2>
 
 <h3><?php echo $err_db ?></h3>
 

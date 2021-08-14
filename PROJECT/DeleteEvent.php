@@ -6,13 +6,14 @@ $id = $_GET["id"];
 $c = getProduct($id);
 //require_once 'Controller/CategoryController.php';
 //$cat = getallcategory();
+session_start();
 ?>
 
 <html>
 <body>
 <h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" method="post">
-<h2 style="color:red" align ="center">Delete Events:</h2>
+<h2 style="color:red" align ="center">DELETE <?php echo $_SESSION["EVENTS"]; ?>:</h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">
 <?php echo $err_db; ?>
 <tr><td align="right"><b>Event Name:</b></td>

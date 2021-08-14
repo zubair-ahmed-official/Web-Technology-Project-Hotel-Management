@@ -1,10 +1,11 @@
 <?php
+		session_start();
 		require_once 'main_header.php';
 		require_once 'Controller/EventsController.php';
 		$pro = getProducts();
 		
 		$i=1;
-		echo "<h1 style='color:green' align='center'><b>Upcoming Events</b></h1>";
+		echo "<h1 style='color:green' align='center'><b>UPCOMING ". $_SESSION["EVENTS"]."</b></h1>";
 
 		foreach($pro as $c)
 		{
