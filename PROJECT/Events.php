@@ -28,7 +28,7 @@
 	<td></td><td></td><td></td><td></td><td></td><td></td></td><td>
 	<td></td><td></td><td></td><td></td><td></td><td></td></td><td>
 	<td></td><td></td><td></td><td></td><td></td><td></td></td><td>
-	<br><img width="400px" height="400px" src="Events.jpg"></td></tr>
+	<br><img width="400px" height="400px" src="Pictures/Events.jpg"></td></tr>
 	</table>
 	</body>
 </html>

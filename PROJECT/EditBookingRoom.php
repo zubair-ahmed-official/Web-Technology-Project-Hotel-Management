@@ -3,7 +3,7 @@ error_reporting (E_ALL ^ E_NOTICE);
 require_once 'main_header.php';
 	require_once 'Controller/BookingRoomController.php';
 	$id = $_GET["id"];
-	$e = getRooms($id);
+	$e = getbookedrooms($id);
 ?>
 
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">

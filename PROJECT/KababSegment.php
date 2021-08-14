@@ -190,6 +190,6 @@ function inseertProduct($RoomNo,$phone,$Cid,$e,$j)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="550px" height="300px" src="Kabab.jpg">
+	<img width="550px" height="300px" src="Pictures/Kabab.jpg">
 	</body>
 </html>

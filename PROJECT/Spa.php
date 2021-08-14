@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$hear = $_POST["hear"];
 	if(!$hasError)
 	{
-		echo "<h2 style='color:SlateBlue;'>Your Spa schedule has been booked to: </h2>";
+		echo "<h2 style='color:SlateBlue;'>The Spa schedule you want to book: </h2>";
 		$arr = $_POST["hear"];
 		//$id = $_POST["id"] ;
     foreach($arr as $e)
@@ -53,7 +53,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	//$query= "INSERT INTO gym VALUES ('$id','$e')";
 	//$query_run = mysqli_connect($con,$query);
     
-	
+	$rs = customerIdExisting($_POST["id"]);
+	if($rs === true)
+	{
 	$rs = inseertProduct($_POST["id"],$e);
 	if($rs === true)
 	{
@@ -61,19 +63,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	$err_db = $rs;
 	}
+	else
+	{
+		echo "<h2 style='color:Red;'>Could not book. Check whether the customer id is valid.</h2>";
+	}
+	}
 	}
 }
 function inseertProduct($id,$e)
 {
-	$query = "insert into gym values ($id,'$e')";
+	$query = "insert into spa values ($id,'$e')";
 	return execute($query);
+}
+function customerIdExisting($id) {
+$query = "select customerId from customers where customerId ='$id'";
+$rs = get ($query) ;
+if(count($rs) > 0) 
+{
+return true;
+}
+return false;
 }
 ?>
 
 
 <html>
     <body>
-	<h1 style="color:Red;"> Booking can be done on the previous day or on the current day </h1>
+	<h1 style="color:Red;"> Booking can be done on the previous day or on the current day.</h1>
 	
 	<script>
 	
@@ -167,7 +183,7 @@ function inseertProduct($id,$e)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b> </td>
-	<td><input id="id" type="text" value="<?php echo $id; ?>" name = "id"><span id="err_id"> <?php echo $err_id; ?> </td>
+	<td><input id="id" type="text" value="<?php echo $id; ?>" name = "id" onfocusout="customerIdExisting(this)"><span id="err_id"><td id="err_cid"> <?php echo $err_id; ?> </td>
 	</tr>
 	<tr><td></td><td align = "right"> <h1><input align = "Right" type="submit" value="Book" > </td> </tr>
 	
@@ -179,8 +195,9 @@ function inseertProduct($id,$e)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="500px" height="500px" src="Spa.jpg">
+	<img width="500px" height="500px" src="Pictures/Spa.jpg">
 	</form>
 	
 	</body>
+	<script src= "JS/customerIdExisting.js" ></script>
 </html>

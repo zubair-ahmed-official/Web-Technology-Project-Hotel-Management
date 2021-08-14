@@ -258,7 +258,7 @@
 		$rs = get($query);
 		return $rs;
 	}
-	function getRooms($id){
+	function getbookedrooms($id){
 		$query = "select * from bookingrooms where id = $id";
 		$rs = get($query);
 		return $rs[0];	
@@ -289,8 +289,30 @@
 	$query = "DELETE FROM booked_rooms WHERE booked_rooms.room_no=$RoomNo";
 	return execute($query);
 	}
-	function searchRoom($key){
+	
+	function searchBookingRoom($key){
 		$query = "select * from bookingrooms where RoomNo like '%$key%'";
+		$rs = get($query);
+		return $rs;
+	}
+	
+	function deleteBookedRoom($RoomNo)
+	{
+	
+		$query = "delete from bookingrooms where RoomNo='$RoomNo'";
+		return execute($query);
+	}
+	
+	
+	function getAllBookedRooms()
+	{
+		$query = "SELECT * FROM bookingrooms";
+		$rs = get($query);
+		return $rs;
+	}
+	function getBookedRoomById($id)
+	{
+		$query = "SELECT * FROM bookingrooms where id='$id'";
 		$rs = get($query);
 		return $rs;
 	}

@@ -1,9 +1,9 @@
 <html>
     <body>
 	
-	<img width="400px" height="300px" src="Buffet2.jpg">
-	<img width="400px" height="300px" src="Buffet3.jpg">
-	<img width="400px" height="300px" src="Buffet4.jpg">
+	<img width="400px" height="300px" src="Pictures/Buffet2.jpg">
+	<img width="400px" height="300px" src="Pictures/Buffet3.jpg">
+	<img width="400px" height="300px" src="Pictures/Buffet4.jpg">
 	
 	<table border="5" align="center">
 	

@@ -15,20 +15,20 @@
 	echo "</form>";
 	?>
 	</td>
-	<td><img width="400px" height="300px" src="Buffet.jpg"></td>
+	<td><img width="400px" height="300px" src="Pictures/Buffet.jpg"></td>
 	<td><?php
 	echo "<form action = 'Classic.php' method='post'>";
 	echo "<input type='Submit' value='Classic'>";
 	echo "</form>";
 	?></td>
-	<td><img width="400px" height="300px" src="Classic.jpg"></td></tr>
+	<td><img width="400px" height="300px" src="Pictures/Classic.jpg"></td></tr>
 	
 	<tr><td><?php
 	echo "<form action = 'KababSegment.php' method='post'>";
 	echo "<input type='Submit' value='Kabab Segment'>";
 	echo "</form>";
 	?></td>
-	<td><img width="400px" height="300px" src="KababSegment.jpg"></td></tr>
+	<td><img width="400px" height="300px" src="Pictures/KababSegment.jpg"></td></tr>
 	
 	
 	

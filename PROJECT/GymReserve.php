@@ -53,6 +53,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	//$query_run = mysqli_connect($con,$query);
     
 	
+	$rs = customerIdExisting($_POST["id"]);
+	if($rs === true)
+	{
 	$rs = inseertProduct($_POST["id"],$e);
 	if($rs === true)
 	{
@@ -60,12 +63,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	$err_db = $rs;
 	}
+	else
+	{
+		echo "<h2 style='color:Red;'>Could not book. Check whether the customer id is valid.</h2>";
+	}
+	}
 	}
 }
 function inseertProduct($id,$e)
 {
 	$query = "insert into gym values ($id,'$e')";
 	return execute($query);
+}
+function customerIdExisting($id) {
+$query = "select customerId from customers where customerId ='$id'";
+$rs = get ($query) ;
+if(count($rs) > 0) 
+{
+return true;
+}
+return false;
 }
 ?>
 
@@ -166,7 +183,7 @@ function inseertProduct($id,$e)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer ID:</b> </td>
-	<td><input id="id" type="text" value="<?php echo $id; ?>" name = "id"><span id="err_id"> <?php echo $err_id; ?> </td>
+	<td><input id="id" type="text" value="<?php echo $id; ?>" name = "id" onfocusout="customerIdExisting(this)"><span id="err_id"><td id="err_cid"> <?php echo $err_id; ?> </td>
 	</tr>
 	<tr><td></td><td align = "right"> <h1><input align = "Right" type="submit" value="Book" > </td> </tr>
 	
@@ -178,8 +195,8 @@ function inseertProduct($id,$e)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="500px" height="500px" src="Gym.jpg">
+	<img width="500px" height="500px" src="Pictures/Gym.jpg">
 	</form>
-	
+	<script src= "JS/customerIdExisting.js" ></script>
 	</body>
 </html>

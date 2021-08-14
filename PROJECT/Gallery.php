@@ -12,26 +12,26 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="4 beds.jpg">
+				<img width="600px" height="500px" src="images/4 beds.jpg">
 			</td>
 			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="2 beds.jpg">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="Resturant pic.jpg">
-			</td>
-			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="Room.jpg">
+				<img width="600px" height="500px" src="images/2 beds.jpg">
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="Spa.jpg">
+				<img width="600px" height="500px" src="images/Resturant pic.jpg">
 			</td>
 			<td colspan="2" align="center">
-				<img width="600px" height="500px" src="gym.jpg">
+				<img width="600px" height="500px" src="images/Room.jpg">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<img width="600px" height="500px" src="images/Spa.jpg">
+			</td>
+			<td colspan="2" align="center">
+				<img width="600px" height="500px" src="images/gym.jpg">
 			</td>
 		</tr>
 	</table>

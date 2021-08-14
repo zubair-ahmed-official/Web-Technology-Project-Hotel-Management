@@ -13,7 +13,7 @@
 						<td align="center" colspan="2"><h1 >Room Booking</h1></td>
 					</tr>
 					<tr>
-						<td align="center" colspan="2"><img width="300px" heigth="200px" src="Room.jpg"/></td>
+						<td align="center" colspan="2"><img width="300px" heigth="200px" src="Pictures/Room.jpg"/></td>
 					</tr>
 					
 					<tr>

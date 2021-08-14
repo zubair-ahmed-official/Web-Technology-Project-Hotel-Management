@@ -175,6 +175,18 @@ function searchRooms($key)
 	$rs = get($query);
 	return $rs;
 }
+function getAllRoomsWithPrice()
+	{
+		$query = "SELECT r.*,c.name as category, c.price, c.description, c.img as image FROM rooms r LEFT JOIN products1 c on r.c_id= c.id";
+		$rs = get($query);
+		return $rs;
+	}
+function searchRoom($key)
+	{
+		$query="select r.id, r.room_no from rooms r left join products1 c on r.c_id= c.id where c.name like '%$key%'";
+		$rs= get($query);
+		return $rs;
+	}
 /* function updateAvlRooms($room_no,$c_id,$id)
 {
 	$query = "update available_rooms set available_rooms.room_no ='$room_no',available_rooms.c_id = $c_id where available_rooms.id = $id";

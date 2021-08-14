@@ -1,20 +1,34 @@
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>
 <html>
 <head>
 </head>
 <body>
-	<table align="center" style="border:2px solid Blue;">
-		<tr>
-			<td><br></td>
-		</tr>
+	<h1 style="color:green" align="center">Welcome  <?php echo $_COOKIE["loggeduser"]; ?> </h1>
+	<table style="border-color:blue; width:40%; height:50%;" align="center" border="4">
+		
 		<tr>
 			<td colspan="3" align="center"><h1>Receiptionist Panel</h1></td>
 		</tr>
+		
 		<tr>
-			<td colspan="3"><hr></td>
+			<td align="center">Book Room</td>
+			<td align="center"><a href ="Room_Booking.php"><input type="button" value="Book"> </a></td>
 		</tr>
 		<tr>
-			<td>Add Customer<td>
-			<td><a href ="CustomerAdd.php"><input type="button" value="Add"> </a></td>
+			<td align="center">Show All Booking Rooms</td>
+			<td align="center"><a href ="AllBookingRooms.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center">Show All Available Rooms</td>
+			<td align="center"><a href ="AvailableRooms.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center">Check in Room</td>
+			<td align="center"><a href ="CustomerCheeckin.php"><input type="button" value="Check in"> </a></td>
 		</tr>
 	</table>		
 </body>			

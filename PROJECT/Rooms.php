@@ -14,7 +14,7 @@ foreach($rooms as $c)
 {
 	$id = $c["id"];
 	echo "<table align='center' style='width:50%; height:30%;' border = '4'>";
-	echo "<tr><td>ID</td><td>Room No.</td><td>Catergry</td><td>Price</td>";
+	echo "<tr><td>ID</td><td>Room No.</td><td>Catergory</td><td>Price</td>";
 	
 	echo "<tr>";
 	echo "<td>$i.</td>";

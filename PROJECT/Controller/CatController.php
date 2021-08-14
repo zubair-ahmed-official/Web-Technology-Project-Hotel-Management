@@ -84,9 +84,13 @@ if(isset($_POST["add_pro"]))
 	$rs = inseertProduct($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"],$target,$_POST["description"]);
 	if($rs === true)
 	{
+	$rs = inseertCat($_POST["name"]/*,$_POST["c_id"]*/,$_POST["price"],$_POST["qty"],$target,$_POST["description"]);
+	if($rs === true)
+	{
 		header("Location: Category.php");
 	}
 	$err_db = $rs;
+	}
 	}
 }
 elseif(isset($_POST["Edit_cat"]))
@@ -173,6 +177,11 @@ elseif(isset($_POST["Delete_cat"]))
 function inseertProduct($name/*,$c_id*/,$price,$qty,$img,$description)
 {
 	$query = "insert into products1 values (NULL,'$name',$price,$qty,'$img','$description')";
+	return execute($query);
+}
+function inseertCat($name/*,$c_id*/,$price,$qty,$img,$description)
+{
+	$query = "insert into categories values (NULL,'$name',$price,$qty,'$img','$description')";
 	return execute($query);
 }
 
