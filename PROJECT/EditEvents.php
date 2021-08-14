@@ -1,4 +1,8 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php
 error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/EventsController.php';
 error_reporting(0);

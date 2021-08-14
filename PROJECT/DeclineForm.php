@@ -1,4 +1,8 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php
 require_once 'Controller/ApprovedRoomController.php';
 require_once 'Controller/BookingRoomController.php';
 $id= $_GET["id"];

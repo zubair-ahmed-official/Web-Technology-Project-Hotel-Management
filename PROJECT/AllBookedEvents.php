@@ -1,4 +1,10 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>
+<?php
+
 require_once 'Controller/EventsController.php';
 require_once 'main_header.php';
 

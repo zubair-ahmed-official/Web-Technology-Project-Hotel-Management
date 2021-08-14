@@ -72,6 +72,10 @@
 				<td><a href ="Room_Booking.php"><input type="button" value="Book Now"> </a></td>
 			</tr>-->
 		<?php
+		if(!isset($_COOKIE["loggeduser"])){
+			header("Location: Login.php");
+		}
+		?><?php
 		require_once 'Controller/CatController.php';
 		require_once 'main_header.php';
 		session_start();

@@ -1,4 +1,9 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>
+<?php
 require_once "Models/db_config.php";
 $hear = [];
 $err_hear = "";

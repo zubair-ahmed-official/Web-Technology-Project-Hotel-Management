@@ -2,8 +2,7 @@
 <body>
 <fieldset style="border-color: blue">
 <table align="left">
-<tr><td><a href="HomePage.php"><input type="submit" value="Home"> </a></td>
-<td>&nbsp;<a href="HomePage.php"><input type="submit" value="Profile"> </a></td></tr>
+<tr><td><a href="HomePageF.php"><input type="submit" value="Home"> </a></td>
 </table>
 <table align="right">
 

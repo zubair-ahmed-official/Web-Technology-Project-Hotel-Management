@@ -34,14 +34,33 @@
 			<td align="center"> All Events</td>
 			<td align="center"><a href ="UpcomingEvents.php"><input type="button" value="Add"> </a></td>
 		</tr>
+		
+		<tr>
+			<td align="center"> All Rooms</td>
+			<td align="center"><a href ="Rooms.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
 		<tr>
 			<td align="center"> All Booked Rooms</td>
 			<td align="center"><a href ="AllBookedRooms.php"><input type="button" value="Approve"> </a></td>
+		</tr>
+		<tr>
+			<td align="center"> All Available Rooms</td>
+			<td align="center"><a href ="AvailableRooms.php"><input type="button" value="Show"> </a></td>
 		</tr>
 		
 		<tr>
 			<td align="center"> Add Notice</td>
 			<td align="center"><a href ="AddNotice.php"><input type="button" value="Add"> </a></td>
+		</tr>
+		<tr>
+			<td align="center"> All Booked Gym Schedules</td>
+			<td align="center"><a href ="AllBookedGym.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> All Booked Spa Schedules</td>
+			<td align="center"><a href ="AllBookedSpa.php"><input type="button" value="Show"> </a></td>
 		</tr>
 	</table>		
 </body>			

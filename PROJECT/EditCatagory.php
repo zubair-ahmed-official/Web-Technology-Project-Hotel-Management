@@ -1,4 +1,8 @@
-<?php 
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php 
 error_reporting (E_ALL ^ E_NOTICE);
 error_reporting (0);
 require_once 'main_header.php';

@@ -1,4 +1,8 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php
 session_start();
 require_once 'Controller/CustomerController.php';
 $customers= getAllCustomer();

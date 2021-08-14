@@ -1,4 +1,8 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php
 require_once 'Controller/RoomsController.php';
 require_once 'Controller/CatController.php';
 

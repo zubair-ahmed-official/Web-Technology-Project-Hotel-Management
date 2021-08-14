@@ -1,7 +1,11 @@
 <?php
 	require_once 'Controller/BookingRoomController.php';
 ?>			
-
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>
 
 
 <html>

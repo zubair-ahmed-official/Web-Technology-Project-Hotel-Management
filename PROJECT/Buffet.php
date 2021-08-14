@@ -1,4 +1,8 @@
-<html>
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><html>
     <body>
 	
 	<img width="400px" height="300px" src="Pictures/Buffet2.jpg">

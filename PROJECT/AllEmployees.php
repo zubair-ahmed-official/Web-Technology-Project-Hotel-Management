@@ -1,6 +1,10 @@
 <?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php
 	session_start();
-error_reporting (E_ALL ^ E_NOTICE);
+	error_reporting (E_ALL ^ E_NOTICE);
     require_once 'Controller/EmployeeController.php';
 	$employees=getAllEmployees();
 	$_SESSION["Employees"] = "Employees";

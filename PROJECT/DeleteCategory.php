@@ -1,4 +1,8 @@
-<?php 
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?><?php 
 require_once 'main_header.php';
 require_once 'Controller/CatController.php';
 $id = $_GET["id"];

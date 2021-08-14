@@ -1,7 +1,11 @@
 <?php 
 	require_once 'Controller/EmployeeController.php';
  ?>
-						
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>					
 <head>
 
 </head>
