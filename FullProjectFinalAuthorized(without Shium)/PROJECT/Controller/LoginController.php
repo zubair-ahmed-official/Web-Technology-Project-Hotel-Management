@@ -79,7 +79,7 @@
 			if($rs === true)
 			{
 				//$_SESSION["loggeduser"] = $Username;
-				setcookie("loggeduser",$Username,time()+1000);
+				setcookie("loggeduser1",$Username,time()+1000);
 				header("Location: Manager_panel.php");
 			}
 			

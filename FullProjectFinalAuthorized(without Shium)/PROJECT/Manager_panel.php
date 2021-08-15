@@ -1,6 +1,6 @@
 <?php
 require_once 'CommonHeader.php';
-if(!isset($_COOKIE["loggeduser"])){
+if(!isset($_COOKIE["loggeduser1"])){
 header("Location: Login.php");
 }
 ?>
@@ -10,7 +10,7 @@ header("Location: Login.php");
 <body>
 <br>
 
-<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser"]; ?> </h1><br>
+<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser1"]; ?> </h1><br>
 <table style="border-color:blue; width:40%; height:70%;" align="center" border="4">
 
 <tr>

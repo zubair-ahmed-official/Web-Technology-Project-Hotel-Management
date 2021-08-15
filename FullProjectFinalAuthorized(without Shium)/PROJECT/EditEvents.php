@@ -1,4 +1,11 @@
 <?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?><?php
 error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/EventsController.php';
 error_reporting(0);
@@ -13,7 +20,6 @@ session_start();
 
 <html>
 <body>
-<h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return(validate());" method="post">
 <h2 style="color:red" align ="center">UPDATE <?php echo $_SESSION["EVENTS"]; ?></h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">

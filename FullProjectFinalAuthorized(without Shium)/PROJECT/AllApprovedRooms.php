@@ -1,4 +1,11 @@
 <?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?><?php
 require_once 'Controller/ApprovedRoomController.php';
 $approved_rooms= getAllApproved();	
 

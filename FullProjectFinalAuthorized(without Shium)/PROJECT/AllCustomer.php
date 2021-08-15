@@ -1,4 +1,12 @@
 <?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?>
+<?php
 session_start();
 require_once 'Controller/CustomerController.php';
 $customers= getAllCustomer();

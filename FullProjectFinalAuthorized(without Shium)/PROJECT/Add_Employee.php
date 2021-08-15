@@ -1,4 +1,9 @@
-<?php 
+<?php
+require_once 'CommonHeader.php';
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+?><?php 
 	require_once 'Controller/EmployeeController.php';
  ?>
 						

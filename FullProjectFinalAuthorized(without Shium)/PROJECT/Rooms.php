@@ -1,4 +1,12 @@
 <?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?>
+<?php
 require_once 'Controller/RoomsController.php';
 require_once 'main_header.php';
 $rooms = getRooms();

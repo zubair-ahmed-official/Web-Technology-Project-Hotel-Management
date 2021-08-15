@@ -1,4 +1,12 @@
 <?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?>
+<?php
 require_once 'main_header.php';
 error_reporting (E_ALL ^ E_NOTICE);
 require_once 'Controller/CatController.php';
@@ -10,7 +18,6 @@ $_SESSION["Category"] = "CATEGORY";
 
 <html>
 <body>
-<h1 style="color:blue" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return validate()"  method="post" enctype= "multipart/form-data">
 <h2 style="color:red" align ="center">ADD <?php echo $_SESSION["Category"];?></h2>
 <table style="border-color:green; width:40%; height:50%;" align="center" border="4">

@@ -1,4 +1,11 @@
-<?php 
+<?php
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
+?><?php 
 error_reporting (E_ALL ^ E_NOTICE);
 error_reporting (0);
 require_once 'main_header.php';
@@ -9,7 +16,6 @@ session_start();
 ?>
 <html>
 <body>
-<h1 style="color:blue;" align ="center">Welcome Admin</h1>
 <form action="" onsubmit = "return(validate());" method="post">
 <h2 style="color:red;" align ="center">Edit <?php echo $_SESSION["Category"];?> :</h2>
 <span><?php echo $err_db; ?></span>

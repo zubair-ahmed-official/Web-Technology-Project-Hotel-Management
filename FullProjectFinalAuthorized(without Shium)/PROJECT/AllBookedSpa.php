@@ -1,7 +1,10 @@
 <?php
-	if(!isset($_COOKIE["loggeduser"])){
-		header("Location: Login.php");
-	}
+if(!isset($_COOKIE["loggeduser"])){
+header("Location: Login.php");
+}
+else if(!isset($_COOKIE["loggeduser1"])){
+header("Location: Login.php");
+}
 ?>
 <?php
 require_once "Models/db_config.php";
@@ -9,16 +12,16 @@ require_once 'main_header.php';
 
 function getBookedGym()
 {
-	$query = "select * from gym";
+	$query = "select * from spa";
 	$rs = get($query);
 	return $rs;
 }
-$gym = getBookedGym();
-echo "<h1 align='center' style='color:green'>All Booked Gym Schedules</h1>";
+$spa = getBookedGym();
+echo "<h1 align='center' style='color:blue'>All Booked Spa Schedules</h1>";
 $i=1;
 
 //echo "&nbsp;&nbsp;";
-foreach($gym as $c)
+foreach($spa as $c)
 {
 	$id = $c["id"];
 	echo "<table align='center' style='width:40%; height:30%;' border = '4'>";
