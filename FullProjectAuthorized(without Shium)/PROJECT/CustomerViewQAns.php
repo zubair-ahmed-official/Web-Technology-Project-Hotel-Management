@@ -1,16 +1,11 @@
+
 <?php
+require_once 'Controller/QuestionAnswerController.php';
 
 if(!isset($_COOKIE["loggeduser0"])){
 header("Location: Login.php");
 }
-?>
-<?php
-require_once 'Controller/QuestionAnswerController.php';
-
-if(!isset($_COOKIE["loggeduser"])){
-header("Location: Login.php");
-}
-$questions= getCustomerView($_COOKIE["loggeduser"]);	
+$questions= getCustomerView($_COOKIE["loggeduser0"]);	
 ?>
 
 

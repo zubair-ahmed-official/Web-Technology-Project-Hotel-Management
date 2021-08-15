@@ -1,13 +1,8 @@
-<?php
 
-if(!isset($_COOKIE["loggeduser0"])){
-header("Location: Login.php");
-}
-?>
 <?php
 require_once 'Controller/QuestionAnswerController.php';
 
-if(!isset($_COOKIE["loggeduser"])){
+if(!isset($_COOKIE["loggeduser0"])){
 header("Location: Login.php");
 }
 ?>
@@ -23,7 +18,7 @@ header("Location: Login.php");
 		<form action="" method="post">
 		
 		<div align="center">
-			<input type="text" name="userName" value="<?php echo $_COOKIE["loggeduser"];?>"><br><br>
+			<input type="text" name="userName" value="<?php echo $_COOKIE["loggeduser0"];?>"><br><br>
 			<textarea style="width:80%; height:30%" class="form-control" name="question" placeholder="Write Here..."></textarea>
 			<br><span><?php echo $err_question;?></span>
 			<br>

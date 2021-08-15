@@ -1,4 +1,8 @@
 <?php
+if(!isset($_COOKIE["loggeduser"]) && !isset($_COOKIE["loggeduser1"]) ){
+header("Location: Login.php");
+}?>
+<?php
 require_once 'Controller/EventsController.php';
 require_once 'main_header.php';
 

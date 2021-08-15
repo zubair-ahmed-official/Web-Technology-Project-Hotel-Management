@@ -18,7 +18,7 @@ header("Location: Login.php");
 	<body>
 	<br>
 		<div class="text-center">
-			<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser"];?></h1>
+			<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser0"];?></h1>
 		</div>
 		<br>
 		

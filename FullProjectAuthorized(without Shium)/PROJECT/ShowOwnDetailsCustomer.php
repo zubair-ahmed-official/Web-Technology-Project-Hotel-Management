@@ -1,16 +1,11 @@
+
 <?php
+require_once 'Controller/CustomerController.php';
 
 if(!isset($_COOKIE["loggeduser0"])){
 header("Location: Login.php");
 }
-?>
-<?php
-require_once 'Controller/CustomerController.php';
-
-if(!isset($_COOKIE["loggeduser"])){
-header("Location: Login.php");
-}
-$userName= $_COOKIE["loggeduser"];
+$userName= $_COOKIE["loggeduser0"];
 $customer= getcustomerByUserName($userName);
 	
 ?>
@@ -20,7 +15,7 @@ $customer= getcustomerByUserName($userName);
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 	<body>
-		<h1 align="center">Hello <?php echo $_COOKIE["loggeduser"];?></h1>
+		<h1 align="center">Hello <?php echo $_COOKIE["loggeduser0"];?></h1>
 		<table align="center" class="table table-striped">
 			<thead>
 				<th>Id</th>

@@ -1,17 +1,11 @@
 <?php
-if(!isset($_COOKIE["loggeduser"])){
-header("Location: Login.php");
-}
-else if(!isset($_COOKIE["loggeduser1"])){
+if(!isset($_COOKIE["loggeduser"]) && !isset($_COOKIE["loggeduser1"]) && !isset($_COOKIE["loggeduser2"])){
 header("Location: Login.php");
 }
 ?><?php
 require_once 'Controller/BookingRoomController.php';
 $booked_rooms= getAllBookedRooms();
 
-if(!isset($_COOKIE["loggeduser"])){
-header("Location: Login.php");
-}	
 ?>
 
 

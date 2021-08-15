@@ -1,11 +1,7 @@
 <?php
-if(!isset($_COOKIE["loggeduser"])){
-header("Location: Login.php");
-}
-else if(!isset($_COOKIE["loggeduser1"])){
-header("Location: Login.php");
-}
-?><?php
+if(isset($_COOKIE["loggeduser"]) || isset($_COOKIE["loggeduser1"]) || isset($_COOKIE["loggeduser2"])){
+
+
 require_once 'main_header.php';
 require_once 'Controller/AvailableRoomsController.php';
 $rooms = getRooms();
@@ -36,6 +32,11 @@ foreach($rooms as $c)
 	
 	echo '&nbsp;';
 	
+}
+}
+else
+{
+	header("Location: Login.php");
 }
 ?>
 
