@@ -38,3 +38,70 @@ header("Location: Login.php");
 		</div>
 		<!--menu ends-->
 </html>
+<?php
+	if(!isset($_COOKIE["loggeduser"])){
+		header("Location: Login.php");
+	}
+?>
+<html>
+<head>
+</head>
+<body>
+	<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser"]; ?> </h1>
+	<table style="border-color:blue; width:40%; height:50%;" align="center" border="4">
+		
+		<tr>
+			<td colspan="3" align="center"><h1>Customers Panel</h1></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> Rooms with price</td>
+			<td align="center"><a href ="AllRooms.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center">Room Categories</td>
+			<td align="center"><a href ="CategoryCust.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center"> Show Own Details</td>
+			<td align="center"><a href ="ShowOwnDetailsCustomer.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center">Ask Question</td>
+			<td align="center"><a href ="CustomerViewQAns.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center"> Booking History</td>
+			<td align="center"><a href ="ShowOwnApprovedRoomCus.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> Give Review</td>
+			<td align="center"><a href ="Review.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> Book Room</td>
+			<td align="center"><a href ="Room_Booking.php"><input type="button" value="Book"> </a></td>
+		</tr>
+		<tr>
+			<td align="center"> Reserve for Gym</td>
+			<td align="center"><a href ="GymReserve.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> Reserve for Spa</td>
+			<td align="center"><a href ="Spa.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		
+		<tr>
+			<td align="center"> Order Foods</td>
+			<td align="center"><a href ="Restaurant.php"><input type="button" value="Show"> </a></td>
+		</tr>
+		<tr>
+			<td align="center">Events</td>
+			<td align="center"><a href ="UpcomingEventsCust.php"><input type="button" value="Show"> </a></td>
+		</tr>
+	</table>		
+</body>			
+</html>

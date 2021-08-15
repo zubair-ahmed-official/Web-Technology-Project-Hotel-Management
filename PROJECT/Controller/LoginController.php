@@ -71,7 +71,7 @@
 			if($rs === true)
 			{
 				//$_SESSION["loggeduser"] = $Username;
-				setcookie("loggeduser",$Username,time()+1000);
+				setcookie("loggeduser1",$Username,time()+1000);
 				header("Location: Admin_panel.php");
 			}
 			
@@ -79,7 +79,7 @@
 			if($rs === true)
 			{
 				//$_SESSION["loggeduser"] = $Username;
-				setcookie("loggeduser",$Username,time()+1000);
+				setcookie("loggeduser2",$Username,time()+1000);
 				header("Location: Manager_panel.php");
 			}
 			
@@ -87,7 +87,7 @@
 			if($rs === true)
 			{
 				//$_SESSION["loggeduser"] = $Username;
-				setcookie("loggeduser",$Username,time()+1000);
+				setcookie("loggeduser3",$Username,time()+1000);
 				header("Location: Receiptionist_panel.php");
 			}
 			
@@ -95,7 +95,7 @@
 			if($rs === true)
 			{
 				//$_SESSION["loggeduser"] = $Username;
-				setcookie("loggeduser",$Username,time()+1000);
+				setcookie("loggeduser4",$Username,time()+1000);
 				header("Location: ChefHeadPanel.php");
 			}
 			
