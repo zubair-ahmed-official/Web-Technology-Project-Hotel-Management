@@ -7,7 +7,7 @@
 <head>
 </head>
 <body>
-	<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser"]; ?> </h1>
+	<h1 style="color:green" align="center">Welcome <?php echo $_COOKIE["loggeduser3"]; ?> </h1>
 	<table style="border-color:blue; width:40%; height:50%;" align="center" border="4">
 		
 		<tr>

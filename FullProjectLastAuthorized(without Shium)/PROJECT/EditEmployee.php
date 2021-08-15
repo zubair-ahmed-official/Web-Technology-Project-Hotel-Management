@@ -2,11 +2,8 @@
 if(!isset($_COOKIE["loggeduser"])){
 header("Location: Login.php");
 }
-else if(!isset($_COOKIE["loggeduser1"])){
-header("Location: Login.php");
-}
 ?><?php 
-session_start();
+	session_start();
    error_reporting (E_ALL ^ E_NOTICE);
    error_reporting (0);
 	require_once 'Controller/EmployeeController.php';
@@ -22,7 +19,7 @@ session_start();
 	</tr>
 	<form action="" method="post">
 	<tr>
-				<td colspan="2" align="center"><h1 style="color:blue"><b>Delete <?php echo $_SESSION["Employees"];?></b></h1></td>
+				<td colspan="2" align="center"><h1 style="color:blue"><b>Edit <?php echo $_SESSION["Employees"];?></b></h1></td>
 			</tr>
 	<tr>		<input type="hidden" name="id" value=<?php echo $id;?>>
 				<td align="right">Name*:</td>
@@ -85,8 +82,12 @@ session_start();
 				</td>
 			</tr>
 			<tr>
-						<td align="center" colspan="2"><input name="DeleteEmployee" type="submit" value="Delete"></td>
+						<td align="center" colspan="2"><input name="EditEmployee" type="submit" value="Edit"></td>
 					</tr>	
+			<tr>
+					<td align="center" colspan="2"><input name="DeleteEmployee" type="submit" value="Delete"></td>
+			</tr>
+
 			</form>
 		</table>
 	
